@@ -187,6 +187,14 @@
 
             <p id="save-status" class="text-sm font-semibold mb-6"></p>
 
+            <div
+                class="mt-4 mb-8 text-left w-full max-w-2xl mx-auto bg-green-50 p-5 rounded-xl border border-green-200">
+                <p class="font-bold text-gray-800 mb-4"><i class="fas fa-th mr-2"></i> Ringkasan Jawaban (Klik nomor
+                    untuk mereview penjelasan):</p>
+                <div id="sum-grid" class="flex flex-wrap gap-2 justify-center">
+                </div>
+            </div>
+
             <div>
                 <button onclick="restartGame()"
                     class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full sm:w-auto">
@@ -1268,12 +1276,21 @@
 
                 if (result.found && result.rawData && result.rawData.length > 5) {
                     const data = JSON.parse(result.rawData);
-                    if (data.currentQuestionIndex > 0 && data.currentQuestionIndex < questionsData.length) {
-                        resumeMessage.innerHTML = `Halo <strong>${inputName}</strong>, kami menemukan data kuis kamu di database yang belum selesai (berhenti di soal ${data.currentQuestionIndex + 1}).`;
+
+                    // UBAH: Cek berdasarkan panjang jawaban, izinkan masuk ke mode review jika sudah tamat
+                    if (data.userAnswers && data.userAnswers.length > 0) {
+                        const isFinished = data.userAnswers.length >= questionsData.length;
+                        const stopPoint = isFinished ? "Kuis Telah Selesai / Mode Review" : `Berhenti di soal ${data.currentQuestionIndex + 1}`;
+
+                        resumeMessage.innerHTML = `Halo <strong>${inputName}</strong>, kami menemukan data kuis kamu di database (<strong>${stopPoint}</strong>).`;
                         resumePopup.classList.remove('hidden');
 
                         btnResume.onclick = function () {
                             resumePopup.classList.add('hidden');
+                            // Jika sudah tamat, atur agar masuk ke soal paling akhir (sudah mode priview)
+                            if (isFinished) {
+                                data.currentQuestionIndex = questionsData.length - 1;
+                            }
                             resumeGame(data);
                         };
 
@@ -1435,6 +1452,21 @@
                     nextBtn.classList.remove('hidden');
                 }
             }
+            // SISIPKAN KODE INI DI BAGIAN PALING BAWAH FUNGSI loadQuestion()
+            if (existingAnswer) {
+                nextBtn.classList.remove('hidden');
+
+                // Ubah tampilan tombol 'Selanjutnya' jika berada di soal paling akhir
+                if (currentQuestionIndex === questionsData.length - 1) {
+                    nextBtn.innerHTML = 'Lihat Hasil <i class="fas fa-flag-checkered ml-2"></i>';
+                    nextBtn.classList.remove('bg-green-700', 'hover:bg-green-800');
+                    nextBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                } else {
+                    nextBtn.innerHTML = 'Selanjutnya <i class="fas fa-chevron-right ml-2"></i>';
+                    nextBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    nextBtn.classList.add('bg-green-700', 'hover:bg-green-800');
+                }
+            }
         }
 
         function selectOption(selectedIndex, buttonElement) {
@@ -1515,7 +1547,15 @@
             if (currentQuestionIndex < questionsData.length) {
                 loadQuestion();
             } else {
-                endGame();
+                // TAMBAHAN: Deteksi jika user berada di Mode Review
+                const isAllAnswered = userAnswers.length >= questionsData.length;
+                if (isAllAnswered) {
+                    quizScreen.classList.add('hidden');
+                    // Langsung kembali ke layar hasil akhir (tanpa animasi loading simpan ulang)
+                    showEndScreen(score, questionsData.length * 10, true);
+                } else {
+                    endGame(); // Simpan ke database jika baru pertama kali tamat
+                }
             }
         }
 
@@ -1586,6 +1626,39 @@
             } else {
                 saveStatus.innerHTML = "<span class='text-red-600'><i class='fas fa-times'></i> Gagal menyimpan hasil kuis. Periksa koneksi internet Anda.</span>";
             }
+
+            // TAMBAHAN: Render Grid Ringkasan Jawaban
+            const sumGrid = document.getElementById('sum-grid');
+            sumGrid.innerHTML = '';
+            questionsData.forEach((q, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-10 h-10 text-sm font-bold rounded-lg border-2 transition-all hover:scale-110 shadow-sm';
+
+                const ans = userAnswers.find(a => a.soal_ke === i + 1);
+                if (ans) {
+                    if (q.type === 'essay') {
+                        btn.classList.add('bg-yellow-100', 'border-yellow-400', 'text-yellow-700');
+                    } else {
+                        const isCorrect = (q.options[q.correctAnswer].substring(0, 2) === ans.jawaban_user);
+                        if (isCorrect) {
+                            btn.classList.add('bg-green-100', 'border-green-500', 'text-green-700');
+                        } else {
+                            btn.classList.add('bg-red-100', 'border-red-500', 'text-red-700');
+                        }
+                    }
+                } else {
+                    btn.classList.add('bg-gray-100', 'border-gray-300', 'text-gray-500'); // Jika terlewat
+                }
+
+                btn.innerText = i + 1;
+                btn.onclick = () => {
+                    currentQuestionIndex = i;
+                    endScreen.classList.add('hidden');
+                    quizScreen.classList.remove('hidden');
+                    loadQuestion(); // Muat kembali soal untuk dilihat penjelasannya
+                };
+                sumGrid.appendChild(btn);
+            });
         }
 
         function restartGame() {
