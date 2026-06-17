@@ -150,13 +150,13 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center mt-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center mt-6 gap-3">
                 <button id="prev-btn" onclick="prevQuestion()"
-                    class="hidden bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-300 w-full sm:w-auto mb-2 sm:mb-0">
+                    class="hidden bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-md transition duration-300 w-full sm:w-auto order-2 sm:order-1">
                     <i class="fas fa-chevron-left mr-2"></i> Kembali
                 </button>
                 <button id="next-btn" onclick="nextQuestion()"
-                    class="hidden bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-300 w-full sm:w-auto mb-2 sm:mb-0">
+                    class="hidden bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-xl shadow-md transition duration-300 w-full sm:w-auto order-1 sm:order-2 ml-auto">
                     Selanjutnya <i class="fas fa-chevron-right ml-2"></i>
                 </button>
             </div>
@@ -229,457 +229,913 @@
                 question: "Berdasarkan materi, organisasi non-profit di bidang konservasi sumber daya alam yang ingin membangkitkan budaya harmoni antara manusia, alam, dan satwa liar di Pulau Jawa adalah...",
                 options: ["A. WWF Indonesia", "B. Javan Wildlife Institute (JAWI)", "C. Tropenbos Indonesia", "D. Yayasan Kehati"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 2 (Tentang Lembaga), disebutkan bahwa 'Javan Wildlife Institute (JAWI) sebagai organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.'"
+                explanation: "Pada halaman 2 (Tentang Lembaga), disebutkan bahwa 'Javan Wildlife Institute (JAWI) sebagai organisasi non-profit di bidang konservasi sumber daya alam ingin membangkitkan kembali budaya hidup harmoni antara manusia, alam dan satwa liar di Pulau Jawa.'",
+                optionExplanations: [
+                    "A (WWF Indonesia): Salah. WWF adalah organisasi konservasi internasional yang beroperasi di banyak negara, tidak secara spesifik disebut dalam materi sebagai penggagas harmoni di Pulau Jawa.",
+                    "B (JAWI): Benar. Pada halaman 2 materi, JAWI disebut sebagai organisasi non-profit yang ingin membangkitkan budaya harmoni antara manusia, alam, dan satwa liar di Pulau Jawa.",
+                    "C (Tropenbos Indonesia): Salah. Tropenbos lebih fokus pada penelitian dan pengelolaan hutan tropis, bukan organisasi yang disebut dalam konteks tersebut.",
+                    "D (Yayasan Kehati): Salah. Yayasan Kehati bergerak di bidang konservasi keanekaragaman hayati secara nasional, tetapi tidak disebut sebagai penggagas spesifik di Pulau Jawa."
+                ]
             },
             {
                 question: "Visi dari Lembaga Jawi Indonesia adalah...",
                 options: ["A. Mengurusdumakan sains konservasi yang inklusif di Indonesia", "B. Menjadikan Indonesia sebagai pusat konservasi dunia", "C. Menjadi Mitra Rujukan Terpercaya di bidang Sains Konservasi di Indonesia", "D. Melindungi seluruh satwa liar di Pulau Jawa"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 2 (Visi Lembaga), secara eksplisit tertulis 'Menjadi Mitra Rujukan Terpercaya di bidang Sains Konservasi di Indonesia'."
+                explanation: "Pada halaman 2 (Visi Lembaga), secara eksplisit tertulis 'Menjadi Mitra Rujukan Terpercaya di bidang Sains Konservasi di Indonesia'.",
+                optionExplanations: [
+                    "A: Salah. Ini adalah misi lembaga, bukan visi.",
+                    "B: Salah. Tidak disebutkan dalam visi lembaga.",
+                    "C: Benar. Sesuai halaman 2, visi JAWI adalah 'Menjadi Mitra Rujukan Terpercaya di bidang Sains Konservasi di Indonesia'.",
+                    "D: Salah. Terlalu sempit dan tidak sesuai dengan pernyataan visi yang lebih luas."
+                ]
             },
             {
                 question: "Misi dari Lembaga Jawi Indonesia adalah...",
                 options: ["A. Menjadikan mitra rujukan terpercaya", "B. Mengurusdumakan sains konservasi yang inklusif di Indonesia", "C. Melakukan survei keanekaragaman hayati di seluruh Indonesia", "D. Memberikan pelatihan kepada masyarakat sekitar hutan"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 2 (Misi Lembaga), tertulis 'Mengurusdumakan sains konservasi yang inklusif di Indonesia'."
+                explanation: "Pada halaman 2 (Misi Lembaga), tertulis 'Mengurusdumakan sains konservasi yang inklusif di Indonesia'.",
+                optionExplanations: [
+                    "A: Salah. Itu adalah bagian dari visi, bukan misi.",
+                    "B: Benar. Sesuai halaman 2, misi JAWI adalah 'Mengurusdumakan sains konservasi yang inklusif di Indonesia'.",
+                    "C: Salah. Survei adalah salah satu kegiatan, bukan pernyataan misi resmi.",
+                    "D: Salah. Pelatihan adalah aktivitas operasional, bukan misi pokok lembaga."
+                ]
             },
             {
                 question: "Berdasarkan materi, pada era 2000-2015, paradigma konservasi di Indonesia mengalami pergeseran menuju...",
                 options: ["A. Konservasi sentralistik", "B. Konservasi Partisipatif", "C. Konservasi Ekstraktif", "D. Konservasi Eksklusif"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 9 (Perkembangan Paradigma Konservasi di Indonesia), dijelaskan bahwa 'Era 2000-2015: Konservasi Partisipatif' dengan pendekatan pelibatan masyarakat lokal (co-management)."
+                explanation: "Pada halaman 9 (Perkembangan Paradigma Konservasi di Indonesia), dijelaskan bahwa 'Era 2000-2015: Konservasi Partisipatif' dengan pendekatan pelibatan masyarakat lokal (co-management).",
+                optionExplanations: [
+                    "A: Salah. Sentralistik lebih menggambarkan era sebelumnya yang bersifat komando dari pusat.",
+                    "B: Benar. Halaman 9 materi menyebut Era 2000-2015 sebagai 'Konservasi Partisipatif' dengan pendekatan pelibatan masyarakat lokal (co-management).",
+                    "C: Salah. Ekstraktif berarti pengambilan sumber daya secara besar-besaran, bertentangan dengan prinsip konservasi.",
+                    "D: Salah. Eksklusif berarti menutup diri dari masyarakat, padahal era ini justru membuka partisipasi."
+                ]
             },
             {
                 question: "Program seperti Hutan Kemasyarakatan (HKm) dan Hutan Adat muncul pada era konservasi...",
                 options: ["A. Era 1990-2000", "B. Era 2000-2015", "C. Era 2016-Kini", "D. Era 1980-1990"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 9, program seperti Hutan Kemasyarakatan (HKm) dan Hutan Adat disebutkan sebagai program yang muncul pada Era 2000-2015 (Konservasi Partisipatif)."
+                explanation: "Pada halaman 9, program seperti Hutan Kemasyarakatan (HKm) dan Hutan Adat disebutkan sebagai program yang muncul pada Era 2000-2015 (Konservasi Partisipatif).",
+                optionExplanations: [
+                    "A: Salah. Program tersebut belum muncul secara massal pada dekade tersebut.",
+                    "B: Benar. Halaman 9 menyebut HKm dan Hutan Adat sebagai program yang muncul pada Era Konservasi Partisipatif (2000-2015).",
+                    "C: Salah. Era ini lebih fokus pada lanskap terpadu dan konservasi berbasis iklim, bukan awal mula program HKm.",
+                    "D: Salah. Terlalu awal, belum ada konsep HKm saat itu."
+                ]
             },
             {
                 question: "Paradigma konservasi era 2016 hingga kini lebih berfokus pada...",
                 options: ["A. Perlindungan ketat tanpa campur tangan manusia", "B. Lanskap terpadu dan konservasi berbasis iklim", "C. Pemanfaatan sumber daya alam secara maksimal", "D. Sistem komando dari pemerintah pusat"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 10, judul utama dari era ini adalah 'Era 2016-Kini: Lanskap Terpadu dan Konservasi Berbasis Iklim'."
+                explanation: "Pada halaman 10, judul utama dari era ini adalah 'Era 2016-Kini: Lanskap Terpadu dan Konservasi Berbasis Iklim'.",
+                optionExplanations: [
+                    "A: Salah. Pendekatan modern justru mengintegrasikan manusia dan produksi.",
+                    "B: Benar. Sesuai halaman 10, era 2016-kini disebut 'Lanskap Terpadu dan Konservasi Berbasis Iklim'.",
+                    "C: Salah. Ini bertentangan dengan prinsip konservasi berkelanjutan.",
+                    "D: Salah. Itu adalah ciri era sebelumnya, era sekarang lebih kolaboratif dan desentralisasi."
+                ]
             },
             {
                 question: "Pendekatan yang terintegrasi dalam agenda pembangunan nasional dan pengendalian iklim pada era konservasi saat ini mencakup...",
                 options: ["A. High Conservation Value (HCV), REDD+, dan area preservasi", "B. Hutan Tanaman Industri (HTI) dan pertambangan", "C. Eksploitasi hutan primer", "D. Monokultur skala besar"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 10, disebutkan bahwa pendekatan pada era ini meliputi 'High Conservation Value (HCV), REDD+, dan area preservasi' yang terintegrasi dalam agenda pembangunan dan pengendalian iklim."
+                explanation: "Pada halaman 10, disebutkan bahwa pendekatan pada era ini meliputi 'High Conservation Value (HCV), REDD+, dan area preservasi' yang terintegrasi dalam agenda pembangunan dan pengendalian iklim.",
+                optionExplanations: [
+                    "A: Benar. Halaman 10 menyebutkan pendekatan tersebut sebagai integrasi konservasi dalam pembangunan dan pengendalian iklim.",
+                    "B: Salah. HTI dan tambang bukan bagian dari pendekatan konservasi, melainkan sektor ekstraktif.",
+                    "C: Salah. Eksploitasi bertentangan dengan konservasi.",
+                    "D: Salah. Monokultur justru sering dikaitkan dengan degradasi lingkungan, bukan konservasi."
+                ]
             },
             {
                 question: "Undang-Undang yang mengatur tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya adalah...",
                 options: ["A. UU No. 41 Tahun 1999", "B. UU No. 5 Tahun 1990", "C. UU No. 32 Tahun 2024", "D. UU No. 23 Tahun 1997"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 11, judul sub-bab secara jelas menyebutkan 'UU No. 5 Tahun 1990' tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya."
+                explanation: "Pada halaman 11, judul sub-bab secara jelas menyebutkan 'UU No. 5 Tahun 1990' tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya.",
+                optionExplanations: [
+                    "A: Salah. UU ini adalah tentang Kehutanan, bukan konservasi secara umum.",
+                    "B: Benar. Halaman 11 menyebut UU No. 5 Tahun 1990 tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya.",
+                    "C: Salah. UU ini adalah revisi dari UU No. 5/1990, bukan undang-undang awal yang mengatur.",
+                    "D: Salah. UU ini tentang Pengelolaan Lingkungan Hidup (sekarang diganti UU 32/2009)."
+                ]
             },
             {
                 question: "UU No. 32 Tahun 2024 merupakan revisi dari...",
                 options: ["A. UU No. 41 Tahun 1999 tentang Kehutanan", "B. UU No. 5 Tahun 1990 tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya", "C. UU No. 23 Tahun 1997 tentang Pengelolaan Lingkungan Hidup", "D. UU No. 26 Tahun 2007 tentang Penataan Ruang"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 11, UU No. 32 Tahun 2024 dijelaskan sebagai 'Perubahan Atas Undang-Undang Nomor 5 Tahun 1990 tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya (Revisi)'."
+                explanation: "Pada halaman 11, UU No. 32 Tahun 2024 dijelaskan sebagai 'Perubahan Atas Undang-Undang Nomor 5 Tahun 1990 tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya (Revisi)'.",
+                optionExplanations: [
+                    "A: Salah. UU 41/1999 adalah tentang Kehutanan, dan UU 32/2024 tidak merevisinya.",
+                    "B: Benar. Halaman 11 menyebut UU 32/2024 sebagai 'Perubahan Atas Undang-Undang Nomor 5 Tahun 1990 tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya'.",
+                    "C: Salah. UU 23/1997 tentang PPLH telah diganti dengan UU 32/2009, bukan direvisi oleh UU 32/2024.",
+                    "D: Salah. UU ini tentang Penataan Ruang, tidak terkait langsung dengan revisi konservasi."
+                ]
             },
             {
                 question: "Kawasan Suaka Alam dan Kawasan Pelestarian Alam diatur dalam undang-undang tentang konservasi. Contoh Kawasan Suaka Alam adalah...",
                 options: ["A. Taman Nasional dan Taman Wisata Alam", "B. Cagar Alam dan Suaka Margasatwa", "C. Taman Hutan Raya dan Taman Wisata Alam", "D. Hutan Lindung dan Hutan Produksi"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 12 (Konsep Areal Konservasi dan Bentuknya), contoh Kawasan Suaka Alam yang diberikan adalah 'Cagar Alam, Suaka Margasatwa'."
+                explanation: "Pada halaman 12 (Konsep Areal Konservasi dan Bentuknya), contoh Kawasan Suaka Alam yang diberikan adalah 'Cagar Alam, Suaka Margasatwa'.",
+                optionExplanations: [
+                    "A: Salah. Keduanya termasuk Kawasan Pelestarian Alam, bukan Suaka Alam.",
+                    "B: Benar. Halaman 12 menyebut Cagar Alam dan Suaka Margasatwa sebagai contoh Kawasan Suaka Alam.",
+                    "C: Salah. Keduanya termasuk Kawasan Pelestarian Alam.",
+                    "D: Salah. Kedua kategori ini adalah bagian dari kawasan hutan berdasarkan fungsi, bukan kawasan konservasi."
+                ]
             },
             {
                 question: "Berdasarkan materi, kawasan yang fokus utamanya pada perlindungan flora, fauna, dan ekosistem secara ketat serta kegiatan manusia sangat dibatasi adalah...",
                 options: ["A. Kawasan Pelestarian Alam", "B. Kawasan Suaka Alam", "C. Areal Preservasi", "D. Zona Penyangga"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 12, deskripsi Kawasan Suaka Alam adalah 'Fokus utama pada perlindungan flora, fauna, dan ekosistem secara ketat. Kegiatan manusia sangat dibatasi atau dilarang.'"
+                explanation: "Pada halaman 12, deskripsi Kawasan Suaka Alam adalah 'Fokus utama pada perlindungan flora, fauna, dan ekosistem secara ketat. Kegiatan manusia sangat dibatasi atau dilarang.'",
+                optionExplanations: [
+                    "A: Salah. Pelestarian alam memperbolehkan kegiatan terbatas seperti penelitian dan wisata.",
+                    "B: Benar. Halaman 12 menjelaskan bahwa Suaka Alam fokus pada perlindungan ketat dan kegiatan manusia sangat dibatasi.",
+                    "C: Salah. Areal preservasi berada di luar kawasan konservasi dan berfungsi sebagai penyangga, bukan perlindungan ketat.",
+                    "D: Salah. Zona penyangga adalah bagian dari zonasi yang melindungi zona inti, tetapi tidak seketat zona inti/suaka alam."
+                ]
             },
             {
                 question: "Taman Nasional dan Taman Hutan Raya termasuk ke dalam kategori...",
                 options: ["A. Kawasan Suaka Alam", "B. Kawasan Pelestarian Alam", "C. Areal Preservasi", "D. Kawasan Budidaya"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 12, Taman Nasional dan Taman Hutan Raya disebutkan sebagai contoh dari 'Kawasan Pelestarian Alam'."
+                explanation: "Pada halaman 12, Taman Nasional dan Taman Hutan Raya disebutkan sebagai contoh dari 'Kawasan Pelestarian Alam'.",
+                optionExplanations: [
+                    "A: Salah. Taman nasional dan tahura bukan suaka alam karena memperbolehkan aktivitas terbatas.",
+                    "B: Benar. Halaman 12 menyebut Taman Nasional dan Taman Hutan Raya sebagai contoh Kawasan Pelestarian Alam.",
+                    "C: Salah. Areal preservasi berada di luar kawasan konservasi, sedangkan taman nasional adalah kawasan konservasi.",
+                    "D: Salah. Kawasan budidaya untuk pertanian/perkebunan, bukan konservasi."
+                ]
             },
             {
                 question: "Berdasarkan materi, areal di luar kawasan konservasi yang dipertahankan kondisi ekologisnya untuk mendukung fungsi penyangga kehidupan disebut...",
                 options: ["A. Kawasan Suaka Alam", "B. Kawasan Pelestarian Alam", "C. Areal Preservasi", "D. Zona Inti"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 14, definisi Areal Preservasi adalah 'area di luar Kawasan Suaka Alam, Kawasan Pelestarian Alam, dan kawasan konservasi di perairan, wilayah pesisir, dan pulau-pulau kecil yang dipertahankan kondisi ekologisnya untuk mendukung fungsi penyangga kehidupan'."
+                explanation: "Pada halaman 14, definisi Areal Preservasi adalah 'area di luar Kawasan Suaka Alam, Kawasan Pelestarian Alam, dan kawasan konservasi di perairan, wilayah pesisir, dan pulau-pulau kecil yang dipertahankan kondisi ekologisnya untuk mendukung fungsi penyangga kehidupan'.",
+                optionExplanations: [
+                    "A: Salah. Suaka alam adalah bagian dari kawasan konservasi, bukan di luar.",
+                    "B: Salah. Juga bagian dari kawasan konservasi.",
+                    "C: Benar. Halaman 14 mendefinisikan areal preservasi sebagai area di luar kawasan konservasi yang dipertahankan kondisi ekologisnya untuk fungsi penyangga.",
+                    "D: Salah. Zona inti adalah bagian dari kawasan konservasi, bukan di luar."
+                ]
             },
             {
                 question: "Berikut ini yang merupakan contoh Areal Preservasi adalah...",
                 options: ["A. Koridor ekologis atau ekosistem penghubung", "B. Kawasan hutan produksi", "C. Lahan perkebunan sawit", "D. Kawasan pemukiman"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 14, disebutkan bahwa 'Areal Preservasi ... dapat berupa: ... koridor ekologis atau ekosistem penghubung'."
+                explanation: "Pada halaman 14, disebutkan bahwa 'Areal Preservasi ... dapat berupa: ... koridor ekologis atau ekosistem penghubung'.",
+                optionExplanations: [
+                    "A: Benar. Halaman 14 menyebut koridor ekologis sebagai salah satu bentuk areal preservasi.",
+                    "B: Salah. Hutan produksi adalah kawasan budidaya, bukan areal preservasi.",
+                    "C: Salah. Lahan sawit adalah areal budidaya, bukan preservasi.",
+                    "D: Salah. Pemukiman adalah areal non-konservasi yang tidak dipertahankan secara ekologis."
+                ]
             },
             {
                 question: "HCV dalam konteks perkebunan adalah singkatan dari...",
                 options: ["A. High Carbon Value", "B. High Conservation Value", "C. Habitat Conservation Venture", "D. Human Community Value"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 15, secara jelas dinyatakan 'HCV artinya High Conservation Value-Nilai Konservasi Tinggi'."
+                explanation: "Pada halaman 15, secara jelas dinyatakan 'HCV artinya High Conservation Value-Nilai Konservasi Tinggi'.",
+                optionExplanations: [
+                    "A: Salah. Meskipun karbon penting, singkatan yang benar adalah High Conservation Value.",
+                    "B: Benar. Halaman 15 menyebut HCV adalah High Conservation Value atau Nilai Konservasi Tinggi.",
+                    "C: Salah. Tidak ada istilah tersebut.",
+                    "D: Salah. HCV tidak terkait dengan nilai komunitas manusia secara eksklusif."
+                ]
             },
             {
                 question: "Konsep HCV (High Conservation Value) digunakan untuk mengidentifikasi kawasan di dalam atau di dekat Unit Pengelolaan yang mengandung...",
                 options: ["A. Nilai ekonomi tinggi", "B. Nilai-nilai penting konservasi lingkungan, sosial, dan budaya", "C. Potensi tambang mineral", "D. Lahan subur untuk pertanian"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 15, konsep HCV dijelaskan sebagai 'Mengidentifikasi kawasan di dalam atau di dekat Unit Pengelolaan yang mengandung nilai-nilai penting konservasi lingkungan, sosial, dan budaya (Nilai Konservasi Tinggi)'."
+                explanation: "Pada halaman 15, konsep HCV dijelaskan sebagai 'Mengidentifikasi kawasan di dalam atau di dekat Unit Pengelolaan yang mengandung nilai-nilai penting konservasi lingkungan, sosial, dan budaya (Nilai Konservasi Tinggi)'.",
+                optionExplanations: [
+                    "A: Salah. HCV bukan tentang ekonomi, melainkan nilai konservasi.",
+                    "B: Benar. Halaman 15 menjelaskan HCV mengidentifikasi kawasan yang mengandung nilai penting konservasi lingkungan, sosial, dan budaya.",
+                    "C: Salah. Tambang tidak termasuk dalam kriteria HCV.",
+                    "D: Salah. Kesuburan lahan tidak menjadi indikator HCV."
+                ]
             },
             {
                 question: "Berdasarkan prinsip HCV, nilai yang mencakup spesies endemik dan spesies langka, terancam atau terancam punah yang signifikan pada level global, regional atau nasional termasuk dalam...",
                 options: ["A. HCV 1: Keanekaragaman spesies", "B. HCV 2: Ekosistem dan mosaik pada level lanskap", "C. HCV 3: Ekosistem dan habitat langka", "D. HCV 6: Nilai kultural"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 18 dan 19, HCV 1 didefinisikan sebagai 'Keanekaragaman spesies' yang mencakup spesies endemik dan spesies langka, terancam atau terancam punah yang signifikan pada level global, regional, atau nasional."
+                explanation: "Pada halaman 18 dan 19, HCV 1 didefinisikan sebagai 'Keanekaragaman spesies' yang mencakup spesies endemik dan spesies langka, terancam atau terancam punah yang signifikan pada level global, regional, atau nasional.",
+                optionExplanations: [
+                    "A: Benar. Halaman 18-19 mendefinisikan HCV 1 sebagai keanekaragaman spesies yang mencakup endemik dan spesies langka/terancam punah.",
+                    "B: Salah. HCV 2 berkaitan dengan bentang alam luas, bukan spesies individual.",
+                    "C: Salah. HCV 3 tentang ekosistem langka, bukan spesies.",
+                    "D: Salah. HCV 6 tentang nilai budaya, bukan keanekaragaman hayati."
+                ]
             },
             {
                 question: "HCV 2 (Nilai Konservasi Tinggi 2) berkaitan dengan...",
                 options: ["A. Keanekaragaman spesies", "B. Ekosistem dan mosaik pada level lanskap yang luas", "C. Jasa ekosistem yang fundamental", "D. Nilai kultural masyarakat"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 18 dan 20, HCV 2 didefinisikan sebagai 'Ekosistem dan mosaik pada level lanskap yang luas yang memiliki signifikansi pada tingkat global, regional, atau nasional'."
+                explanation: "Pada halaman 18 dan 20, HCV 2 didefinisikan sebagai 'Ekosistem dan mosaik pada level lanskap yang luas yang memiliki signifikansi pada tingkat global, regional, atau nasional'.",
+                optionExplanations: [
+                    "A: Salah. Itu adalah HCV 1.",
+                    "B: Benar. Halaman 18 dan 20 menyebut HCV 2 sebagai ekosistem dan mosaik pada level lanskap yang luas yang signifikan secara global, regional, atau nasional.",
+                    "C: Salah. Itu adalah HCV 4.",
+                    "D: Salah. Itu adalah HCV 6."
+                ]
             },
             {
                 question: "Situasi yang memenuhi syarat sebagai HCV 3 adalah...",
                 options: ["A. Wilayah yang luas relatif jauh dari pemukiman", "B. Situs dengan nilai historis dan kultural penting", "C. Ekosistem yang langka secara alami, seperti hutan karst batu gamping", "D. Lahan berburu dan penjeratan"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 21, salah satu situasi yang memenuhi syarat sebagai HCV 3 adalah 'Ekosistem yang langka secara alami, seperti beberapa jenis hutan karst batu gamping'."
+                explanation: "Pada halaman 21, salah satu situasi yang memenuhi syarat sebagai HCV 3 adalah 'Ekosistem yang langka secara alami, seperti beberapa jenis hutan karst batu gamping'.",
+                optionExplanations: [
+                    "A: Salah. Itu lebih mengarah ke HCV 2 (bentang alam luas).",
+                    "B: Salah. Situs dengan nilai historis dan kultural adalah HCV 6.",
+                    "C: Benar. Halaman 21 menyebut ekosistem langka alami sebagai contoh HCV 3.",
+                    "D: Salah. Itu termasuk HCV 5 (kebutuhan dasar masyarakat)."
+                ]
             },
             {
                 question: "HCV 4 (Nilai Konservasi Tinggi 4) berkaitan dengan...",
                 options: ["A. Keanekaragaman spesies", "B. Ekosistem dan habitat langka", "C. Jasa ekosistem dalam situasi penting, seperti perlindungan daerah tangkapan air", "D. Nilai kultural, arkeologis, atau sejarah"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 18 dan 22, HCV 4 didefinisikan sebagai 'Jasa ekosistem mendasar dalam situasi penting, termasuk perlindungan daerah tangkapan air dan kontrol erosi pada tanah rentan dan lereng'."
+                explanation: "Pada halaman 18 dan 22, HCV 4 didefinisikan sebagai 'Jasa ekosistem mendasar dalam situasi penting, termasuk perlindungan daerah tangkapan air dan kontrol erosi pada tanah rentan dan lereng'.",
+                optionExplanations: [
+                    "A: Salah. Itu HCV 1.",
+                    "B: Salah. Itu HCV 3.",
+                    "C: Benar. Halaman 18 dan 22 menjelaskan HCV 4 tentang jasa ekosistem seperti perlindungan DAS dan pengendalian erosi.",
+                    "D: Salah. Itu HCV 6."
+                ]
             },
             {
                 question: "HCV 5 (Nilai Konservasi Tinggi 5) berkaitan dengan...",
                 options: ["A. Keanekaragaman spesies", "B. Ekosistem dan mosaik lanskap", "C. Situs dan sumberdaya fundamental untuk memenuhi kebutuhan dasar masyarakat lokal", "D. Situs dengan signifikansi kultural dan religi"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 18 dan 23, HCV 5 didefinisikan sebagai 'Situs dan sumber daya yang fundamental untuk memenuhi kebutuhan dasar masyarakat lokal atau masyarakat adat'."
+                explanation: "Pada halaman 18 dan 23, HCV 5 didefinisikan sebagai 'Situs dan sumber daya yang fundamental untuk memenuhi kebutuhan dasar masyarakat lokal atau masyarakat adat'.",
+                optionExplanations: [
+                    "A: Salah. Itu HCV 1.",
+                    "B: Salah. Itu HCV 2.",
+                    "C: Benar. Halaman 18 dan 23 mendefinisikan HCV 5 sebagai situs dan sumber daya fundamental untuk kebutuhan dasar masyarakat.",
+                    "D: Salah. Itu HCV 6."
+                ]
             },
             {
                 question: "HCV 6 (Nilai Konservasi Tinggi 6) berkaitan dengan...",
                 options: ["A. Keanekaragaman spesies", "B. Jasa ekosistem", "C. Situs dan sumberdaya dengan signifikansi kultural, arkeologis, atau sejarah bagi masyarakat adat", "D. Kebutuhan dasar masyarakat lokal"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 18 dan 24, HCV 6 didefinisikan sebagai 'Situs dan sumberdaya, habitat dan lanskap dengan signifikasi kultural, arkeologis atau sejarah atau religi/sakral bagi masyarakat adat'."
+                explanation: "Pada halaman 18 dan 24, HCV 6 didefinisikan sebagai 'Situs dan sumberdaya, habitat dan lanskap dengan signifikasi kultural, arkeologis atau sejarah atau religi/sakral bagi masyarakat adat'.",
+                optionExplanations: [
+                    "A: Salah. Itu HCV 1.",
+                    "B: Salah. Itu HCV 4.",
+                    "C: Benar. Halaman 18 dan 24 menyebut HCV 6 sebagai situs dengan nilai budaya bagi masyarakat adat.",
+                    "D: Salah. Itu HCV 5."
+                ]
             },
             {
                 question: "Salah satu fungsi utama HCV adalah...",
                 options: ["A. Meningkatkan produksi kelapa sawit secara drastis", "B. Mengidentifikasi area bernilai konservasi tinggi dan menjadi dasar zonasi lahan", "C. Menghilangkan semua aktivitas manusia di sekitar hutan", "D. Menentukan harga jual komoditas perkebunan"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 17, salah satu fungsi utama HCV adalah 'Mengidentifikasi area bernilai konservasi tinggi' dan 'Menjadi dasar zonasi lahan'. HCV berfungsi melindungi, bukan meningkatkan produksi secara drastis."
+                explanation: "Pada halaman 17, salah satu fungsi utama HCV adalah 'Mengidentifikasi area bernilai konservasi tinggi' dan 'Menjadi dasar zonasi lahan'. HCV berfungsi melindungi, bukan meningkatkan produksi secara drastis.",
+                optionExplanations: [
+                    "A: Salah. HCV tidak bertujuan meningkatkan produksi, melainkan melindungi nilai konservasi.",
+                    "B: Benar. Halaman 17 menyebut fungsi HCV antara lain mengidentifikasi area bernilai tinggi dan menjadi dasar zonasi.",
+                    "C: Salah. HCV tidak bertujuan menghilangkan aktivitas, melainkan mengelola secara bijak.",
+                    "D: Salah. HCV tidak terkait dengan harga jual."
+                ]
             },
             {
                 question: "Sertifikasi keberlanjutan seperti RSPO (Roundtable on Sustainable Palm Oil) mensyaratkan adanya...",
                 options: ["A. Penggunaan pestisida kimia dalam jumlah besar", "B. Identifikasi dan pengelolaan area HCV", "C. Konversi hutan primer menjadi lahan sawit", "D. Monokultur tanpa tanaman penutup tanah"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 17, dijelaskan bahwa HCV adalah 'Syarat sertifikasi keberlanjutan' dan 'Digunakan dalam standar Roundtable on Sustainable Palm Oil (RSPO)'."
+                explanation: "Pada halaman 17, dijelaskan bahwa HCV adalah 'Syarat sertifikasi keberlanjutan' dan 'Digunakan dalam standar Roundtable on Sustainable Palm Oil (RSPO)'.",
+                optionExplanations: [
+                    "A: Salah. RSPO justru membatasi penggunaan pestisida berbahaya.",
+                    "B: Benar. Halaman 17 menyebut HCV sebagai syarat sertifikasi RSPO.",
+                    "C: Salah. RSPO melarang konversi hutan primer sejak 2005.",
+                    "D: Salah. RSPO mendorong praktik ramah lingkungan, bukan monokultur terbuka."
+                ]
             },
             {
                 question: "Berdasarkan studi kasus dalam materi, salah satu dampak negatif perkebunan sawit terhadap orangutan adalah...",
                 options: ["A. Populasi orangutan meningkat pesat", "B. Terjadinya penurunan populasi akibat kekurangan pakan dan habitat terisolasi", "C. Orangutan bermigrasi ke perkotaan", "D. Orangutan beradaptasi dan tidak terpengaruh"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 30, dampak sawit terhadap orangutan disebutkan meliputi 'Kekurangan pakan → sumber pakan hilang karena hutan dibuka', 'Perburuan, pembunuhan', dan 'Potensi perkawinan sedarah → habitat terisolasi', yang semuanya mengarah pada penurunan populasi."
+                explanation: "Pada halaman 30, dampak sawit terhadap orangutan disebutkan meliputi 'Kekurangan pakan → sumber pakan hilang karena hutan dibuka', 'Perburuan, pembunuhan', dan 'Potensi perkawinan sedarah → habitat terisolasi', yang semuanya mengarah pada penurunan populasi.",
+                optionExplanations: [
+                    "A: Salah. Fakta menunjukkan penurunan populasi.",
+                    "B: Benar. Halaman 30 menyebut dampak sawit terhadap orangutan meliputi kekurangan pakan, perburuan, dan isolasi habitat.",
+                    "C: Salah. Tidak ada bukti orangutan bermigrasi ke kota.",
+                    "D: Salah. Orangutan sangat terdampak oleh konversi hutan."
+                ]
             },
             {
                 question: "Kerugian perusahaan akibat konflik orangutan dengan perkebunan sawit, selain kerusakan tanaman, adalah...",
                 options: ["A. Mendapatkan subsidi dari pemerintah", "B. Peningkatan reputasi di mata konsumen", "C. Risiko hukum karena membunuh satwa dilindungi dan reputasi buruk", "D. Akses pasar internasional menjadi lebih mudah"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 31, disebutkan bahwa orangutan adalah 'satwa dilindungi → membunuh berarti harus siap berhadapan dengan hukum → tidak baik bagi reputasi perusahaan sawit'."
+                explanation: "Pada halaman 31, disebutkan bahwa orangutan adalah 'satwa dilindungi → membunuh berarti harus siap berhadapan dengan hukum → tidak baik bagi reputasi perusahaan sawit'.",
+                optionExplanations: [
+                    "A: Salah. Konflik tidak mendatangkan subsidi.",
+                    "B: Salah. Justru sebaliknya menyebabkan reputasi memburuk.",
+                    "C: Benar. Halaman 31 menyebut orangutan dilindungi, membunuh berarti berhadapan dengan hukum dan merusak reputasi.",
+                    "D: Salah. Konflik menyulitkan akses pasar karena isu keberlanjutan."
+                ]
             },
             {
                 question: "Apa fungsi dari Zona Penyangga (Buffer Zone) dalam konteks perkebunan sawit di sekitar kawasan konservasi?",
                 options: ["A. Tempat utama untuk pembangunan pabrik pengolahan sawit", "B. 'Sabuk pengaman' untuk menyerap polutan, mengurangi erosi, dan menjadi koridor ekologis", "C. Lahan untuk perluasan kebun sawit", "D. Wilayah pemukiman bagi pekerja kebun"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 47, fungsi utama zona penyangga dijelaskan sebagai 'Bertindak sebagai sabuk pengaman vital ... Menyerap Polutan dan Erosi ... Menjadi Koridor Ekologis dan Ruang Jelajah Satwa'."
+                explanation: "Pada halaman 47, fungsi utama zona penyangga dijelaskan sebagai 'Bertindak sebagai sabuk pengaman vital ... Menyerap Polutan dan Erosi ... Menjadi Koridor Ekologis dan Ruang Jelajah Satwa'.",
+                optionExplanations: [
+                    "A: Salah. Zona penyangga bukan untuk industri berat.",
+                    "B: Benar. Halaman 47 menjelaskan fungsi zona penyangga sebagai sabuk pengaman, penyerap polutan, dan koridor satwa.",
+                    "C: Salah. Zona penyangga justru membatasi perluasan.",
+                    "D: Salah. Pemukiman tidak termasuk fungsi zona penyangga."
+                ]
             },
             {
                 question: "Wilayah dengan perlindungan ketat, habitat kunci, dan fokus utama pada pelestarian keanekaragaman hayati dalam zonasi kawasan konservasi disebut...",
                 options: ["A. Zona Transisi", "B. Zona Penyangga", "C. Zona Inti", "D. Zona Budidaya"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 51, Zona Inti didefinisikan sebagai 'Wilayah dengan perlindungan ketat, habitat kunci atau ekosistem sensitif. Fokus utama pada pelestarian keanekaragaman hayati. Aktivitas manusia yang merusak dilarang.'"
+                explanation: "Pada halaman 51, Zona Inti didefinisikan sebagai 'Wilayah dengan perlindungan ketat, habitat kunci atau ekosistem sensitif. Fokus utama pada pelestarian keanekaragaman hayati. Aktivitas manusia yang merusak dilarang.'",
+                optionExplanations: [
+                    "A: Salah. Zona transisi adalah area terluar yang mendukung aktivitas manusia.",
+                    "B: Salah. Zona penyangga melindungi zona inti tetapi tidak seketat itu.",
+                    "C: Benar. Halaman 51 mendefinisikan zona inti sebagai wilayah perlindungan ketat dan fokus pelestarian.",
+                    "D: Salah. Bukan bagian dari zonasi konservasi."
+                ]
             },
             {
                 question: "Wilayah terluar dalam zonasi konservasi yang mendukung aktivitas manusia berkelanjutan seperti pertanian ramah lingkungan disebut...",
                 options: ["A. Zona Inti", "B. Zona Penyangga", "C. Zona Transisi", "D. Zona Rehabilitasi"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 51, Zona Transisi didefinisikan sebagai 'Wilayah terluar yang mendukung aktivitas manusia berkelanjutan seperti pertanian ramah lingkungan, pemanfaatan hasil hutan non-kayu, dan ekowisata.'"
+                explanation: "Pada halaman 51, Zona Transisi didefinisikan sebagai 'Wilayah terluar yang mendukung aktivitas manusia berkelanjutan seperti pertanian ramah lingkungan, pemanfaatan hasil hutan non-kayu, dan ekowisata.'",
+                optionExplanations: [
+                    "A: Salah. Zona inti adalah perlindungan ketat.",
+                    "B: Salah. Zona penyangga berada di antara inti dan transisi, aktivitasnya lebih terbatas.",
+                    "C: Benar. Halaman 51 menyebut zona transisi sebagai wilayah terluar yang mendukung pertanian ramah lingkungan dan ekowisata.",
+                    "D: Salah. Rehabilitasi biasanya untuk pemulihan ekosistem, bukan zona tetap dalam zonasi."
+                ]
             },
             {
                 question: "Data yang merepresentasikan objek atau fenomena yang memiliki lokasi geografis spesifik di permukaan bumi disebut...",
                 options: ["A. Data Sekunder", "B. Data Spasial", "C. Data Primer", "D. Data Kuantitatif"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 71 dan 73, data spasial didefinisikan sebagai 'Data yang merepresentasikan objek atau fenomena yang memiliki lokasi geografis spesifik di permukaan bumi.'"
+                explanation: "Pada halaman 71 dan 73, data spasial didefinisikan sebagai 'Data yang merepresentasikan objek atau fenomena yang memiliki lokasi geografis spesifik di permukaan bumi.'",
+                optionExplanations: [
+                    "A: Salah. Data sekunder adalah data yang sudah dikumpulkan pihak lain, tidak harus spasial.",
+                    "B: Benar. Halaman 71 mendefinisikan data spasial sebagai data yang merepresentasikan objek dengan lokasi geografis.",
+                    "C: Salah. Data primer adalah data yang dikumpulkan langsung, bisa spasial atau non-spasial.",
+                    "D: Salah. Data kuantitatif adalah data numerik, tidak selalu spasial."
+                ]
             },
             {
                 question: "Dua komponen utama dari data spasial adalah...",
                 options: ["A. Data raster dan data vektor", "B. Informasi spasial (geometri dan topologi) dan informasi atribut", "C. Data citra satelit dan data GPS", "D. Informasi koordinat dan informasi waktu"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 71, dijelaskan bahwa data spasial 'Memiliki dua komponen utama: informasi spasial (geometri: titik, garis, poligon; dan topologi: hubungan antar objek) dan informasi atribut (deskripsi atau karakteristik objek tersebut).'"
+                explanation: "Pada halaman 71, dijelaskan bahwa data spasial 'Memiliki dua komponen utama: informasi spasial (geometri: titik, garis, poligon; dan topologi: hubungan antar objek) dan informasi atribut (deskripsi atau karakteristik objek tersebut).'",
+                optionExplanations: [
+                    "A: Salah. Itu adalah format data spasial, bukan komponen utama.",
+                    "B: Benar. Halaman 71 menyebut dua komponen utama data spasial adalah informasi spasial (geometri dan topologi) serta informasi atribut (deskripsi).",
+                    "C: Salah. Itu adalah sumber data, bukan komponen.",
+                    "D: Salah. Waktu bukan komponen utama data spasial."
+                ]
             },
             {
                 question: "Contoh data spasial dalam bentuk titik, garis, dan poligon secara berturut-turut adalah...",
                 options: ["A. Peta jenis tanah, batas kawasan hutan, sebaran spesies", "B. Sebaran spesies, jaringan sungai, batas kawasan hutan", "C. Jaringan sungai, sebaran spesies, peta jenis tanah", "D. Batas kawasan hutan, sebaran spesies, jaringan sungai"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 71, contoh konkret diberikan: 'Lokasi sebaran spesies (titik), jaringan sungai (garis), batas kawasan hutan (poligon)'."
+                explanation: "Pada halaman 71, contoh konkret diberikan: 'Lokasi sebaran spesies (titik), jaringan sungai (garis), batas kawasan hutan (poligon)'.",
+                optionExplanations: [
+                    "A: Salah. Peta jenis tanah dan batas hutan biasanya poligon, bukan titik.",
+                    "B: Benar. Halaman 71 memberi contoh titik (sebaran spesies), garis (sungai), dan poligon (batas hutan).",
+                    "C: Salah. Urutan tidak sesuai (garis, titik, poligon).",
+                    "D: Salah. Urutan poligon, titik, garis."
+                ]
             },
             {
                 question: "Ilmu dan seni untuk memperoleh informasi mengenai suatu objek tanpa kontak langsung melalui sensor disebut...",
                 options: ["A. Sistem Informasi Geografis (SIG)", "B. Penginderaan Jauh (Remote Sensing)", "C. Analisis Statistik", "D. Kartografi Digital"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 68, Penginderaan Jauh didefinisikan sebagai 'Ilmu & seni perolehan informasi objek tanpa kontak langsung (via sensor)'."
+                explanation: "Pada halaman 68, Penginderaan Jauh didefinisikan sebagai 'Ilmu & seni perolehan informasi objek tanpa kontak langsung (via sensor)'.",
+                optionExplanations: [
+                    "A: Salah. SIG adalah sistem untuk mengelola dan menganalisis data geografis, bukan perolehan data langsung.",
+                    "B: Benar. Halaman 68 mendefinisikan penginderaan jauh sebagai ilmu dan seni memperoleh informasi objek tanpa kontak langsung melalui sensor.",
+                    "C: Salah. Analisis statistik adalah pengolahan data, bukan perolehan data.",
+                    "D: Salah. Kartografi adalah pembuatan peta, bukan pengambilan data sensor."
+                ]
             },
             {
                 question: "Contoh sumber data penginderaan jauh kategori 'open source' yang disebutkan dalam materi adalah...",
                 options: ["A. Peta cetak dari toko buku lokal", "B. Copernicus Open Access Hub dan USGS Earth Explorer", "C. Data rahasia militer negara", "D. Sistem navigasi kapal komersial"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 65, dalam sub-bab 'Sumber Open Source', disebutkan 'USGS Earth Explorer' dan 'Copernicus Open Access Hub'."
+                explanation: "Pada halaman 65, dalam sub-bab 'Sumber Open Source', disebutkan 'USGS Earth Explorer' dan 'Copernicus Open Access Hub'.",
+                optionExplanations: [
+                    "A: Salah. Peta cetak bukan data penginderaan jauh digital dan tidak open source.",
+                    "B: Benar. Halaman 65 menyebut kedua portal sebagai sumber open source.",
+                    "C: Salah. Data militer bersifat tertutup, bukan open source.",
+                    "D: Salah. Itu bukan sumber data penginderaan jauh untuk konservasi."
+                ]
             },
             {
                 question: "Metode klasifikasi citra satelit yang memerlukan input sampel area latih dari pengguna disebut...",
                 options: ["A. Klasifikasi Terbimbing (Supervised Classification)", "B. Klasifikasi Tak Terbimbing (Unsupervised Classification)", "C. Klasifikasi Objek (Object-Based Classification)", "D. Klasifikasi Hibrida"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 55, metode Supervised Classification dijelaskan sebagai metode di mana 'pengguna memberikan sampel area yang telah diketahui jenis tutupan lahannya (training areas) untuk melatih algoritma'."
+                explanation: "Pada halaman 55, metode Supervised Classification dijelaskan sebagai metode di mana 'pengguna memberikan sampel area yang telah diketahui jenis tutupan lahannya (training areas) untuk melatih algoritma'.",
+                optionExplanations: [
+                    "A: Benar. Halaman 55 menjelaskan metode ini memerlukan sampel area latih dari pengguna untuk melatih algoritma.",
+                    "B: Salah. Metode ini otomatis tanpa input latih.",
+                    "C: Salah. Meskipun menggunakan objek, tidak disebutkan dalam materi sebagai metode utama.",
+                    "D: Salah. Tidak disebutkan dalam materi."
+                ]
             },
             {
                 question: "Metode klasifikasi citra satelit di mana algoritma secara otomatis mengelompokkan piksel berdasarkan kesamaan nilai spektral tanpa input pengguna disebut...",
                 options: ["A. Klasifikasi Terbimbing (Supervised Classification)", "B. Klasifikasi Tak Terbimbing (Unsupervised Classification)", "C. Klasifikasi Digital", "D. Klasifikasi Manual"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 55, metode Unsupervised Classification dijelaskan sebagai metode di mana 'algoritma secara otomatis mengelompokkan piksel-piksel citra ke dalam beberapa kelas berdasarkan kesamaan nilai spektralnya, tanpa memerlukan input sampel latih dari pengguna'."
+                explanation: "Pada halaman 55, metode Unsupervised Classification dijelaskan sebagai metode di mana 'algoritma secara otomatis mengelompokkan piksel-piksel citra ke dalam beberapa kelas berdasarkan kesamaan nilai spektralnya, tanpa memerlukan input sampel latih dari pengguna'.",
+                optionExplanations: [
+                    "A: Salah. Supervised memerlukan input latih.",
+                    "B: Benar. Halaman 55 menyebut unsupervised classification mengelompokkan piksel secara otomatis tanpa input latih.",
+                    "C: Salah. Terlalu umum, tidak spesifik.",
+                    "D: Salah. Manual dilakukan oleh manusia secara visual, bukan algoritma."
+                ]
             },
             {
                 question: "Mengapa pemantauan tutupan lahan sangat penting dalam strategi konservasi?",
                 options: ["A. Karena digunakan untuk menghitung jumlah populasi manusia di kota besar", "B. Karena memberikan dasar untuk mendeteksi deforestasi, mengidentifikasi habitat kritis, dan mengukur efektivitas program", "C. Karena tutupan lahan selalu bersifat statis dan tidak pernah berubah", "D. Karena hanya melalui tutupan lahan kita bisa mengetahui harga tanah di pasar global"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 62 dan 66, dijelaskan bahwa data spasial dan penginderaan jauh digunakan untuk 'Monitoring Dinamika: Deforestasi, hotspot, perambahan' dan sebagai 'dasar analisis tutupan lahan & deforestasi' untuk mengukur efektivitas program."
+                explanation: "Pada halaman 62 dan 66, dijelaskan bahwa data spasial dan penginderaan jauh digunakan untuk 'Monitoring Dinamika: Deforestasi, hotspot, perambahan' dan sebagai 'dasar analisis tutupan lahan & deforestasi' untuk mengukur efektivitas program.",
+                optionExplanations: [
+                    "A: Salah. Tutupan lahan tidak digunakan untuk sensus penduduk.",
+                    "B: Benar. Halaman 62 dan 66 menjelaskan tutupan lahan penting untuk monitoring dinamika dan evaluasi program.",
+                    "C: Salah. Tutupan lahan dinamis dan berubah.",
+                    "D: Salah. Harga tanah tidak ditentukan oleh tutupan lahan semata."
+                ]
             },
             {
                 question: "Sistem Informasi Geografis (SIG) bukan hanya sekadar perangkat lunak, melainkan integrasi dari beberapa komponen, yaitu...",
                 options: ["A. Lensa kamera, Satelit, dan Printer", "B. Kertas Peta, Pensil, dan Penggaris", "C. Hardware, Software, Data, Manusia, dan Metode", "D. Hanya Data Digital dan Koneksi Internet"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 63, SIG didefinisikan sebagai 'Sistem komputer terintegrasi (Hardware, Software, Data, Manusia, Metode) untuk kelola & analisis data geografis.'"
+                explanation: "Pada halaman 63, SIG didefinisikan sebagai 'Sistem komputer terintegrasi (Hardware, Software, Data, Manusia, Metode) untuk kelola & analisis data geografis.'",
+                optionExplanations: [
+                    "A: Salah. Itu adalah perangkat keras, bukan seluruh komponen SIG.",
+                    "B: Salah. Itu alat analog, bukan SIG modern.",
+                    "C: Benar. Halaman 63 menyebut SIG sebagai integrasi kelima komponen tersebut.",
+                    "D: Salah. Masih kurang komponen manusia dan metode."
+                ]
             },
             {
                 question: "Proses untuk memahami pola dan hubungan geografis dalam data yang memiliki komponen lokasi menggunakan perangkat lunak seperti SIG disebut...",
                 options: ["A. Penginderaan Jauh", "B. Analisis Spasial", "C. Kartografi", "D. Survei Terestris"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 75, analisis spasial didefinisikan sebagai 'Proses untuk memahami pola dan hubungan geografis dalam data yang memiliki komponen Lokasi. Analisis spasial menggunakan software seperti Sistem Informasi Geografis (GIS)'."
+                explanation: "Pada halaman 75, analisis spasial didefinisikan sebagai 'Proses untuk memahami pola dan hubungan geografis dalam data yang memiliki komponen Lokasi. Analisis spasial menggunakan software seperti Sistem Informasi Geografis (GIS)'.",
+                optionExplanations: [
+                    "A: Salah. Penginderaan jauh adalah pengambilan data, bukan analisis pola.",
+                    "B: Benar. Halaman 75 mendefinisikan analisis spasial sebagai proses memahami pola dan hubungan geografis dalam data lokasi.",
+                    "C: Salah. Kartografi adalah pembuatan peta, bukan analisis.",
+                    "D: Salah. Survei adalah pengukuran lapangan."
+                ]
             },
             {
                 question: "Salah satu alat pemantauan ekosistem konservasi yang disebutkan dalam materi adalah...",
                 options: ["A. Kamera ponsel", "B. GPS Collar", "C. Termometer", "D. Barometer"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 92, terdapat gambar dan judul 'GPS Collar' sebagai salah satu alat pemantauan satwa liar yang disebutkan dalam materi."
+                explanation: "Pada halaman 92, terdapat gambar dan judul 'GPS Collar' sebagai salah satu alat pemantauan satwa liar yang disebutkan dalam materi.",
+                optionExplanations: [
+                    "A: Salah. Kamera ponsel tidak disebut sebagai alat pemantauan khusus.",
+                    "B: Benar. Halaman 92 menampilkan gambar dan judul GPS Collar sebagai alat pemantauan satwa liar.",
+                    "C: Salah. Termometer mengukur suhu, bukan alat pemantauan satwa secara langsung.",
+                    "D: Salah. Barometer mengukur tekanan udara, tidak digunakan untuk pemantauan satwa."
+                ]
             },
             {
                 question: "Ilmu pengetahuan yang berkaitan dengan produksi suara dan efeknya pada organisme hidup, yang digunakan dalam pemantauan satwa liar adalah...",
                 options: ["A. Ekologi", "B. Bioakustik", "C. Taksonomi", "D. Fisiologi"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 94, didefinisikan 'Ilmu pengetahuan yang berkaitan dengan produksi suara dan efeknya pada organisme hidup'. Ilmu ini adalah bioakustik."
+                explanation: "Pada halaman 94, didefinisikan 'Ilmu pengetahuan yang berkaitan dengan produksi suara dan efeknya pada organisme hidup'. Ilmu ini adalah bioakustik.",
+                optionExplanations: [
+                    "A: Salah. Ekologi adalah interaksi organisme dengan lingkungan, bukan khusus suara.",
+                    "B: Benar. Halaman 94 mendefinisikan bioakustik sebagai ilmu tentang produksi suara dan efeknya pada organisme hidup.",
+                    "C: Salah. Taksonomi adalah klasifikasi makhluk hidup.",
+                    "D: Salah. Fisiologi adalah fungsi organ tubuh."
+                ]
             },
             {
                 question: "Keuntungan penggunaan metode bioakustik (PAM - Passive Acoustic Monitoring) dalam pemantauan satwa liar adalah...",
                 options: ["A. Membutuhkan kehadiran manusia secara langsung di lapangan", "B. Biaya yang sangat mahal dan jangkauan terbatas", "C. Efisiensi waktu dan biaya, jangkauan luas, dan mengurangi gangguan dari observer", "D. Hanya efektif untuk satwa yang aktif di malam hari"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 95, kelebihan PAM disebutkan: 'Alternatif untuk menggantikan kehadiran manusia secara langsung di lapangan', 'Efisiensi waktu dan biaya, jangkauan luas', dan 'Mengurangi gangguan dari observer'."
+                explanation: "Pada halaman 95, kelebihan PAM disebutkan: 'Alternatif untuk menggantikan kehadiran manusia secara langsung di lapangan', 'Efisiensi waktu dan biaya, jangkauan luas', dan 'Mengurangi gangguan dari observer'.",
+                optionExplanations: [
+                    "A: Salah. PAM justru menggantikan kehadiran manusia.",
+                    "B: Salah. PAM efisien dan berjangkauan luas.",
+                    "C: Benar. Halaman 95 menyebut kelebihan PAM antara lain efisiensi waktu dan biaya, jangkauan luas, dan mengurangi gangguan.",
+                    "D: Salah. PAM dapat merekam siang dan malam."
+                ]
             },
             {
                 question: "Berdasarkan hasil penelitian di lahan agroforestri sawit di Jambi, tutupan lahan dengan keanekaragaman jenis burung tertinggi adalah...",
                 options: ["A. Kebun sawit monokultur", "B. Agroforestri sawit muda", "C. Agroforestri sawit tua", "D. Hutan Sekunder"],
                 correctAnswer: 3,
-                explanation: "Pada halaman 104, hasil penelitian menunjukkan 'Jumlah jenis burung tertinggi di Hutan Sekunder' dan urutannya adalah 'Hutan Sekunder > SJB 1 > SJB 2 > Agroforestri tua > Kebun sawit monokultur'."
+                explanation: "Pada halaman 104, hasil penelitian menunjukkan 'Jumlah jenis burung tertinggi di Hutan Sekunder' dan urutannya adalah 'Hutan Sekunder > SJB 1 > SJB 2 > Agroforestri tua > Kebun sawit monokultur'.",
+                optionExplanations: [
+                    "A: Salah. Hasil penelitian menunjukkan jumlah jenis burung terendah di monokultur.",
+                    "B: Salah. Lebih rendah daripada hutan sekunder.",
+                    "C: Salah. Lebih rendah dari hutan sekunder dan agroforestri muda.",
+                    "D: Benar. Halaman 104 menyebut jumlah jenis burung tertinggi di hutan sekunder."
+                ]
             },
             {
                 question: "Prinsip visual bertanggung jawab dalam penggunaan media sosial untuk konservasi satwa adalah...",
                 options: ["A. Menampilkan satwa dalam posisi lucu dan jinak", "B. Menggunakan filter untuk membuat satwa terlihat lebih menarik", "C. Menampilkan satwa di habitat alaminya dengan caption edukatif", "D. Menampilkan kontak langsung antara manusia dan primata"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 88, prinsip visual bertanggung jawab meliputi 'Tampilkan satwa di habitat alaminya', 'Hindari kontak langsung manusia-primate', dan 'Gunakan caption edukatif dan kontekstual'."
+                explanation: "Pada halaman 88, prinsip visual bertanggung jawab meliputi 'Tampilkan satwa di habitat alaminya', 'Hindari kontak langsung manusia-primate', dan 'Gunakan caption edukatif dan kontekstual'.",
+                optionExplanations: [
+                    "A: Salah. Dapat menyesatkan dan memicu eksploitasi.",
+                    "B: Salah. Filter membuat satwa terlihat tidak alami.",
+                    "C: Benar. Halaman 88 menyebut prinsip visual bertanggung jawab antara lain menampilkan satwa di habitat alami dan caption edukatif.",
+                    "D: Salah. Harus dihindari karena berbahaya dan tidak etis."
+                ]
             },
             {
                 question: "Salah satu dampak negatif dari konten satwa liar yang tidak etis di media sosial adalah...",
                 options: ["A. Meningkatkan kesadaran publik secara luas", "B. Meningkatkan permintaan pasar gelap satwa liar", "C. Membantu upaya konservasi", "D. Memperkuat pesan konservasi"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 85 dan 88, disebutkan bahwa media sosial dapat berkontribusi pada 'eksploitasi spesies, perdagangan ilegal' dan konten tidak etis bisa 'meningkatkan permintaan pasar gelap' dan 'melemahkan pesan konservasi'."
+                explanation: "Pada halaman 85 dan 88, disebutkan bahwa media sosial dapat berkontribusi pada 'eksploitasi spesies, perdagangan ilegal' dan konten tidak etis bisa 'meningkatkan permintaan pasar gelap' dan 'melemahkan pesan konservasi'.",
+                optionExplanations: [
+                    "A: Salah. Konten tidak etis justru menyesatkan.",
+                    "B: Benar. Halaman 85 dan 88 menyebut konten tidak etis dapat meningkatkan perdagangan ilegal.",
+                    "C: Salah. Konten tidak etis merugikan konservasi.",
+                    "D: Salah. Sebaliknya melemahkan pesan."
+                ]
             },
             {
                 question: "Target utama dari kampanye #BeliYangBaik oleh WWF-Indonesia adalah...",
                 options: ["A. Meningkatkan produksi sawit nasional", "B. Mengedukasi konsumen agar memilih produk dengan ecolabel", "C. Memboikot semua produk sawit", "D. Mengurangi konsumsi minyak goreng"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 83, kampanye #BeliYangBaik oleh WWF-Indonesia disebutkan 'mengedukasi konsumen agar memilih produk dengan ecolabel'."
+                explanation: "Pada halaman 83, kampanye #BeliYangBaik oleh WWF-Indonesia disebutkan 'mengedukasi konsumen agar memilih produk dengan ecolabel'.",
+                optionExplanations: [
+                    "A: Salah. Kampanye tidak bertujuan meningkatkan produksi, melainkan konsumsi berkelanjutan.",
+                    "B: Benar. Halaman 83 menyebut kampanye #BeliYangBaik mengedukasi konsumen untuk memilih produk berkelanjutan.",
+                    "C: Salah. Kampanye tidak memboikot, tetapi mendorong pilihan bijak.",
+                    "D: Salah. Bukan target utama."
+                ]
             },
             {
                 question: "Menurut materi, risiko utama jika komunikasi konservasi diabaikan oleh perusahaan adalah...",
                 options: ["A. Perusahaan mendapatkan banyak donor", "B. Perusahaan dicap tidak ramah lingkungan, menghadapi tekanan publik, dan kehilangan pasar", "C. Perusahaan bebas beroperasi tanpa regulasi", "D. Perusahaan mendapatkan sertifikasi dengan mudah"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 83, risiko jika komunikasi diabaikan adalah 'Perusahaan dicap tidak ramah lingkungan, menghadapi tekanan publik dan kehilangan pasar' serta 'Terhambat masuk ke pasar ekspor'."
+                explanation: "Pada halaman 83, risiko jika komunikasi diabaikan adalah 'Perusahaan dicap tidak ramah lingkungan, menghadapi tekanan publik dan kehilangan pasar' serta 'Terhambat masuk ke pasar ekspor'.",
+                optionExplanations: [
+                    "A: Salah. Justru sebaliknya.",
+                    "B: Benar. Halaman 83 menyebut risiko jika komunikasi diabaikan adalah tekanan publik dan kehilangan pasar.",
+                    "C: Salah. Justru mendapat sanksi sosial dan ekonomi.",
+                    "D: Salah. Komunikasi yang buruk menghambat sertifikasi."
+                ]
             },
             {
                 question: "Areal HCV di luar hutan lindung yang ditetapkan negara memiliki status perlindungan yang...",
                 options: ["A. Mengikat secara hukum dan permanen", "B. Bergantung penuh pada komitmen sukarela korporasi", "C. Dijamin sepenuhnya oleh pemerintah daerah", "D. Diakui secara formal sebagai entitas konservasi nasional"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 123, dinyatakan bahwa 'Areal HCV di luar hutan lindung yang ditetapkan negara belum diakui secara formal sebagai entitas konservasi yang mengikat secara hukum. Nasibnya bergantung penuh pada komitmen sukarela korporasi.'"
+                explanation: "Pada halaman 123, dinyatakan bahwa 'Areal HCV di luar hutan lindung yang ditetapkan negara belum diakui secara formal sebagai entitas konservasi yang mengikat secara hukum. Nasibnya bergantung penuh pada komitmen sukarela korporasi.'",
+                optionExplanations: [
+                    "A: Salah. Areal HCV di luar hutan lindung tidak memiliki ikatan hukum permanen.",
+                    "B: Benar. Halaman 123 menyatakan areal HCV di luar hutan lindung belum diakui secara formal dan perlindungannya bergantung pada komitmen sukarela perusahaan.",
+                    "C: Salah. Tidak ada jaminan penuh dari pemerintah daerah.",
+                    "D: Salah. Belum diakui formal."
+                ]
             },
             {
                 question: "Tujuan utama dari pengelolaan HCV adalah...",
                 options: ["A. Meningkatkan keuntungan perusahaan dalam jangka pendek", "B. Mempertahankan dan meningkatkan nilai-nilai lingkungan dan sosial yang signifikan", "C. Mengganti seluruh hutan alam menjadi perkebunan", "D. Menghilangkan semua aktivitas masyarakat di sekitar hutan"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 108, tujuan pengelolaan HCV adalah 'Mempertahankan dan, jika dimungkinkan, meningkatkan nilai-nilai lingkungan dan sosial yang signifikan dan penting sebagai bagian dan pengelolaan yang bertanggung jawab' (HCV Network, 2017)."
+                explanation: "Pada halaman 108, tujuan pengelolaan HCV adalah 'Mempertahankan dan, jika dimungkinkan, meningkatkan nilai-nilai lingkungan dan sosial yang signifikan dan penting sebagai bagian dan pengelolaan yang bertanggung jawab' (HCV Network, 2017).",
+                optionExplanations: [
+                    "A: Salah. Tujuan HCV bukan keuntungan finansial.",
+                    "B: Benar. Halaman 108 menyebut tujuan HCV adalah mempertahankan dan meningkatkan nilai lingkungan dan sosial yang signifikan.",
+                    "C: Salah. HCV justru melindungi hutan.",
+                    "D: Salah. HCV mengakui nilai sosial dan budaya."
+                ]
             },
             {
                 question: "Selain IUCN Red List, spesies dilindungi di Indonesia juga diatur dalam...",
                 options: ["A. Peraturan Menteri Keuangan", "B. Peraturan Menteri Lingkungan Hidup dan Kehutanan No. 106 Tahun 2018", "C. Undang-Undang Cipta Kerja", "D. Peraturan Presiden tentang Tata Ruang"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 112, selain IUCN Red List, disebutkan 'Spesies dilindungi Permenbut No 106 th 2018' (Peraturan Menteri Lingkungan Hidup dan Kehutanan No. 106 Tahun 2018)."
+                explanation: "Pada halaman 112, selain IUCN Red List, disebutkan 'Spesies dilindungi Permenbut No 106 th 2018' (Peraturan Menteri Lingkungan Hidup dan Kehutanan No. 106 Tahun 2018).",
+                optionExplanations: [
+                    "A: Salah. Keuangan tidak mengatur spesies dilindungi.",
+                    "B: Benar. Halaman 112 menyebut spesies dilindungi diatur dalam Permen LHK No. 106 Tahun 2018.",
+                    "C: Salah. UU Cipta Kerja tidak secara spesifik mengatur daftar spesies dilindungi.",
+                    "D: Salah. Tata ruang tidak berisi daftar spesies dilindungi."
+                ]
             },
             {
                 question: "Kriteria 'Spesies yang masuk dalam kategori dilindungi dan terancam punah (PP, IUCN Red List, CITES)' masuk dalam kriteria ...",
                 options: ["A. NKT 1.1", "B. NKT 1.2", "C. NKT 1.3", "D. NKT 1.4"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 37 materi, disebutkan bahwa NKT 1.2 adalah 'Kawasan yang mempunyai jenis-jenis hayati yang hampir punah' dengan kriteria 'spesies yang masuk dalam kategori dilindungi dan terancam punah (PP; IUCN Red List, CITES)'."
+                explanation: "Pada halaman 37 materi, disebutkan bahwa NKT 1.2 adalah 'Kawasan yang mempunyai jenis-jenis hayati yang hampir punah' dengan kriteria 'spesies yang masuk dalam kategori dilindungi dan terancam punah (PP; IUCN Red List, CITES)'.",
+                optionExplanations: [
+                    "A: Salah. NKT 1.1 berkaitan dengan fungsi pendukung bagi kawasan lindung atau konservasi (halaman 36).",
+                    "B: Benar. Halaman 37 menyebut NKT 1.2 adalah 'Kawasan yang mempunyai jenis-jenis hayati yang hampir punah' dengan kriteria 'spesies yang masuk dalam kategori dilindungi dan terancam punah (PP; IUCN Red List, CITES)'.",
+                    "C: Salah. NKT 1.3 berkaitan dengan habitat bagi populasi spesies terancam yang mampu bertahan hidup.",
+                    "D: Salah. NKT 1.4 berkaitan dengan habitat kunci yang digunakan secara temporer."
+                ]
             },
             {
                 question: "Nilai Konservasi Tinggi (NKT) adalah sesuatu yang bernilai konservasi tinggi yang meliputi nilai-nilai, kecuali ...",
                 options: ["A. ekologi", "B. jasa lingkungan", "C. sosial budaya", "D. kawasan yang tidak menyerap polutan dari perkebunan sawit"],
                 correctAnswer: 3,
-                explanation: "Pada halaman 28 materi, definisi NKT adalah 'nilai konservasi tinggi pada tingkat lokal, regional atau global yang meliputi nilai-nilai ekologi, jasa lingkungan, sosial dan budaya.' Pilihan D tidak termasuk dalam definisi NKT."
+                explanation: "Pada halaman 28 materi, definisi NKT adalah 'nilai konservasi tinggi pada tingkat lokal, regional atau global yang meliputi nilai-nilai ekologi, jasa lingkungan, sosial dan budaya.' Pilihan D tidak termasuk dalam definisi NKT.",
+                optionExplanations: [
+                    "A: Salah. Ekologi adalah salah satu nilai yang dicakup oleh NKT (halaman 28).",
+                    "B: Salah. Jasa lingkungan adalah salah satu nilai yang dicakup oleh NKT (halaman 28).",
+                    "C: Salah. Sosial budaya adalah salah satu nilai yang dicakup oleh NKT (halaman 28).",
+                    "D: Benar. Ini tidak termasuk dalam definisi NKT pada halaman 28. NKT mencakup nilai ekologi, jasa lingkungan, sosial, dan budaya."
+                ]
             },
             {
                 question: "Setelah identifikasi NKT, maka diperoleh data aspek jasa lingkungan dan sosial budaya, antara lain ...",
                 options: ["A. kondisi kualitatif habitat", "B. jenis dan distribusi satwa liar", "C. kerapatan vegetasi", "D. ketersediaan yang menyediakan jasa lingkungan"],
                 correctAnswer: 3,
-                explanation: "Pilihan A, B, dan C merupakan data aspek ekologi (flora dan fauna). Data aspek jasa lingkungan (NKT 4) berkaitan dengan ketersediaan fungsi ekosistem seperti penyediaan air, pengendalian banjir, dan pengendalian erosi."
+                explanation: "Pilihan A, B, dan C merupakan data aspek ekologi (flora dan fauna). Data aspek jasa lingkungan (NKT 4) berkaitan dengan ketersediaan fungsi ekosistem seperti penyediaan air, pengendalian banjir, dan pengendalian erosi.",
+                optionExplanations: [
+                    "A: Salah. Ini termasuk data aspek ekologi (flora/fauna), bukan jasa lingkungan.",
+                    "B: Salah. Ini termasuk data aspek ekologi (flora/fauna), bukan jasa lingkungan.",
+                    "C: Salah. Ini termasuk data aspek ekologi (flora/fauna), bukan jasa lingkungan.",
+                    "D: Benar. Data jasa lingkungan (NKT 4) berkaitan dengan ketersediaan fungsi ekosistem seperti penyediaan air, pengendalian banjir, dan pengendalian erosi."
+                ]
             },
             {
                 question: "Berikut adalah yang bukan termasuk dalam kawasan Kriteria NKT 6: terdapat kawasan dengan identitas budaya khas masyarakat lokal ...",
                 options: ["A. hutan keramat", "B. kawasan dan pengendalian banjir bagi masyarakat", "C. sumber air kampung", "D. tempat untuk melakukan upacara adat"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 91-93, NKT 6 mencakup situs-situs dengan signifikansi budaya seperti hutan keramat, tempat upacara adat, makam leluhur, dan situs religi. Pengendalian banjir merupakan fungsi jasa ekosistem yang masuk dalam NKT 4, bukan NKT 6."
+                explanation: "Pada halaman 91-93, NKT 6 mencakup situs-situs dengan signifikansi budaya seperti hutan keramat, tempat upacara adat, makam leluhur, dan situs religi. Pengendalian banjir merupakan fungsi jasa ekosistem yang masuk dalam NKT 4, bukan NKT 6.",
+                optionExplanations: [
+                    "A: Salah. Hutan keramat termasuk contoh NKT 6 (halaman 92).",
+                    "B: Benar. Ini adalah fungsi jasa ekosistem yang termasuk dalam NKT 4, bukan NKT 6.",
+                    "C: Salah. Sumber air kampung bisa termasuk NKT 5 (kebutuhan dasar) atau NKT 6 jika memiliki nilai budaya.",
+                    "D: Salah. Tempat upacara adat termasuk contoh NKT 6 (halaman 91-92)."
+                ]
             },
             {
                 question: "Berikut yang bukan termasuk NKT 4, Kawasan yang menyediakan jasa-jasa lingkungan alami ...",
                 options: ["A. kawasan pasuda air", "B. kawasan dan pengendalian banjir bagi masyarakat", "C. kawasan dengan keanekaragaman tinggi", "D. kawasan yang penting bagi pengendalian erosi dan sedimentasi"],
                 correctAnswer: 2,
-                explanation: "Keanekaragaman hayati yang tinggi merupakan bagian dari NKT 1 (Kawasan yang mempunyai tingkat keanekaragaman hayati yang penting), bukan NKT 4. NKT 4 berfokus pada jasa lingkungan."
+                explanation: "Keanekaragaman hayati yang tinggi merupakan bagian dari NKT 1 (Kawasan yang mempunyai tingkat keanekaragaman hayati yang penting), bukan NKT 4. NKT 4 berfokus pada jasa lingkungan.",
+                optionExplanations: [
+                    "A: Salah. Penyedia air adalah bagian dari NKT 4 (halaman 69-70).",
+                    "B: Salah. Pengendalian banjir adalah bagian dari NKT 4 (halaman 69-70).",
+                    "C: Benar. Keanekaragaman hayati yang tinggi merupakan bagian dari NKT 1 (halaman 29).",
+                    "D: Salah. Pengendalian erosi adalah bagian dari NKT 4 (halaman 77)."
+                ]
             },
             {
                 question: "NKT 5: Kawasan yang mempunyai fungsi penting pemenuhan kebutuhan dasar masyarakat lokal, yang bukan termasuk kebutuhan dasar adalah ...",
                 options: ["A. pangan", "B. ternak", "C. gizi nabati", "D. obat-obatan"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 86-87, kebutuhan dasar yang termasuk dalam NKT 5 mencakup bahan pangan, air, kayu bakar, bahan bangunan, pakan ternak, dan obat-obatan. 'Gizi nabati' tidak secara spesifik disebutkan."
+                explanation: "Pada halaman 86-87, kebutuhan dasar yang termasuk dalam NKT 5 mencakup bahan pangan, air, kayu bakar, bahan bangunan, pakan ternak, dan obat-obatan. 'Gizi nabati' tidak secara spesifik disebutkan.",
+                optionExplanations: [
+                    "A: Salah. Pangan termasuk kebutuhan dasar dalam NKT 5.",
+                    "B: Salah. Pakan ternak termasuk kebutuhan dasar dalam NKT 5.",
+                    "C: Benar. Tidak secara spesifik disebutkan sebagai kategori tersendiri dalam NKT 5 pada halaman 86-87. NKT 5 mencakup bahan pangan, air, kayu bakar, bahan bangunan, pakan ternak, dan obat-obatan.",
+                    "D: Salah. Obat-obatan termasuk kebutuhan dasar dalam NKT 5."
+                ]
             },
             {
                 question: "Panduan Identifikasi Kawasan Bernilai Konservasi Tinggi di Indonesia oleh Konsorsium Revisi HCV Toolkit Indonesia pada tahun ...",
                 options: ["A. 2003", "B. 2004", "C. 2008", "D. 2009"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 28 materi, disebutkan 'NKT yang lebih dikenal dengan istilah HCV (High Conservation Value) Indonesian Toolkit 2008.' Selain itu, pada halaman 19 juga disebutkan 'HCV Toolkit 2008 & 2013.'"
+                explanation: "Pada halaman 28 materi, disebutkan 'NKT yang lebih dikenal dengan istilah HCV (High Conservation Value) Indonesian Toolkit 2008.' Selain itu, pada halaman 19 juga disebutkan 'HCV Toolkit 2008 & 2013.'",
+                optionExplanations: [
+                    "A: Salah. Tahun 2003 adalah awal penerapan HCV di perkebunan sawit.",
+                    "B: Salah. Tahun 2004 adalah saat HCV menjadi syarat sertifikasi RSPO.",
+                    "C: Benar. Halaman 28 menyebut 'NKT yang lebih dikenal dengan istilah HCV (High Conservation Value) Indonesian Toolkit 2008.'",
+                    "D: Salah. Tidak ada penyebutan tahun 2009 dalam materi terkait HCV Toolkit."
+                ]
             },
             {
                 question: "Status konservasi yang diberikan kepada spesies yang sedang menghadapi risiko kepunahan di alam liar pada waktu yang akan datang, disebut ...",
                 options: ["A. Extinct (Punah)", "B. Critically Endangered (CR, Kritis)", "C. Vulnerable (VU, Rentan)", "D. Endangered (EN, Genting atau Terancam)"],
                 correctAnswer: 3,
-                explanation: "Pada halaman 41, definisi Endangered (EN) adalah 'status konservasi yang diberikan kepada spesies yang sedang menghadapi risiko kepunahan di alam liar yang tinggi pada waktu yang akan datang.'"
+                explanation: "Pada halaman 41, definisi Endangered (EN) adalah 'status konservasi yang diberikan kepada spesies yang sedang menghadapi risiko kepunahan di alam liar yang tinggi pada waktu yang akan datang.'",
+                optionExplanations: [
+                    "A: Salah. Punah berarti spesies tidak ditemukan lagi di alam (halaman 39).",
+                    "B: Salah. CR adalah spesies yang menghadapi risiko kepunahan di waktu dekat (halaman 40), bukan 'waktu yang akan datang' secara umum.",
+                    "C: Salah. VU adalah spesies yang menghadapi risiko kepunahan di alam liar pada waktu yang akan datang, tetapi definisi yang paling tepat untuk pertanyaan adalah Endangered.",
+                    "D: Benar. Halaman 41 mendefinisikan Endangered sebagai 'status konservasi yang diberikan kepada spesies yang sedang menghadapi risiko kepunahan di alam liar yang tinggi pada waktu yang akan datang.'"
+                ]
             },
             {
                 question: "Kawasan bentang alam yang penting bagi dinamika ekologi secara alami, masuk dalam NKT ...",
                 options: ["A. NKT 1", "B. NKT 2", "C. NKT 3", "D. NKT 4"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 51, judul sub-bab adalah 'NKT 2. Kawasan bentang alam yang penting bagi dinamika ekologi secara alami.' NKT 2 mencakup bentang alam hutan yang utuh."
+                explanation: "Pada halaman 51, judul sub-bab adalah 'NKT 2. Kawasan bentang alam yang penting bagi dinamika ekologi secara alami.' NKT 2 mencakup bentang alam hutan yang utuh.",
+                optionExplanations: [
+                    "A: Salah. NKT 1 tentang keanekaragaman hayati.",
+                    "B: Benar. Halaman 51 menyebut 'NKT 2. Kawasan bentang alam yang penting bagi dinamika ekologi secara alami.'",
+                    "C: Salah. NKT 3 tentang ekosistem langka atau terancam punah.",
+                    "D: Salah. NKT 4 tentang jasa-jasa lingkungan alami."
+                ]
             },
             {
                 question: "Berikut yang bukan termasuk klasifikasi kawasan konservasi ...",
                 options: ["A. kawasan suaka alam", "B. suaka margasatwa", "C. kawasan hutan", "D. taman buru"],
                 correctAnswer: 2,
-                explanation: "Kawasan hutan adalah istilah umum yang tidak selalu merujuk pada status konservasi yang dilindungi secara khusus. Kawasan suaka alam, suaka margasatwa, dan taman buru merupakan kategori kawasan."
+                explanation: "Kawasan hutan adalah istilah umum yang tidak selalu merujuk pada status konservasi yang dilindungi secara khusus. Kawasan suaka alam, suaka margasatwa, dan taman buru merupakan kategori kawasan.",
+                optionExplanations: [
+                    "A: Salah. Kawasan suaka alam adalah klasifikasi kawasan konservasi.",
+                    "B: Salah. Suaka margasatwa adalah bagian dari kawasan suaka alam.",
+                    "C: Benar. Kawasan hutan adalah istilah umum yang tidak selalu merujuk pada status konservasi yang dilindungi secara khusus.",
+                    "D: Salah. Taman buru adalah salah satu bentuk kawasan konservasi."
+                ]
             },
             {
                 question: "Nilai Konservasi Tinggi (NKT) adalah sesuatu yang bernilai konservasi tinggi pada tingkat lokal, regional, dan ...",
                 options: ["A. global", "B. nasional", "C. provinsi", "D. benua"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 28, definisi NKT adalah 'nilai konservasi tinggi pada tingkat lokal, regional atau global.' Nilai NKT dapat bersifat signifikan di berbagai tingkatan, termasuk global."
+                explanation: "Pada halaman 28, definisi NKT adalah 'nilai konservasi tinggi pada tingkat lokal, regional atau global.' Nilai NKT dapat bersifat signifikan di berbagai tingkatan, termasuk global.",
+                optionExplanations: [
+                    "A: Benar. Halaman 28 mendefinisikan NKT sebagai 'nilai konservasi tinggi pada tingkat lokal, regional atau global.'",
+                    "B: Salah. Nasional termasuk dalam cakupan, tetapi yang disebutkan secara eksplisit dalam definisi adalah lokal, regional, dan global.",
+                    "C: Salah. Tidak disebutkan dalam definisi NKT.",
+                    "D: Salah. Tidak disebutkan dalam definisi NKT."
+                ]
             },
             {
                 question: "Kawasan yang Mempunyai Ekosistem Langka atau Terancam Punah, termasuk dalam NKT ...",
                 options: ["A. 1", "B. 2", "C. 3", "D. 4"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 29 dan 57, NKT 3 didefinisikan sebagai 'Kawasan yang mempunyai ekosistem langka atau terancam punah.' Kriteria NKT 3 mencakup ekosistem yang kehilangan 50% atau lebih dari luas masa lampau."
+                explanation: "Pada halaman 29 dan 57, NKT 3 didefinisikan sebagai 'Kawasan yang mempunyai ekosistem langka atau terancam punah.' Kriteria NKT 3 mencakup ekosistem yang kehilangan 50% atau lebih dari luas masa lampau.",
+                optionExplanations: [
+                    "A: Salah. NKT 1 tentang keanekaragaman hayati.",
+                    "B: Salah. NKT 2 tentang bentang alam.",
+                    "C: Benar. Halaman 29 dan 57 mendefinisikan NKT 3 sebagai 'Kawasan yang mempunyai ekosistem langka atau terancam punah.'",
+                    "D: Salah. NKT 4 tentang jasa-jasa lingkungan alami."
+                ]
             },
             {
                 question: "Istilah 'konservasi' berasal dari kata conservation yang mengandung makna kata con (together) dan servare yang berarti ...",
                 options: ["A. together", "B. keep", "C. protect", "D. wise"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 4, dijelaskan bahwa kata 'conservation' berasal dari 'con (together)' dan 'servare (to keep, to save what we have)'. Konservasi adalah upaya memanfaatkan dan memelihara."
+                explanation: "Pada halaman 4, dijelaskan bahwa kata 'conservation' berasal dari 'con (together)' dan 'servare (to keep, to save what we have)'. Konservasi adalah upaya memanfaatkan dan memelihara.",
+                optionExplanations: [
+                    "A: Salah. Together adalah arti dari 'con', bukan 'servare'.",
+                    "B: Benar. Halaman 4 menjelaskan kata 'conservation' berasal dari 'con (together)' dan 'servare (to keep, to save what we have)'.",
+                    "C: Salah. Meskipun proteksi adalah bagian dari konservasi, arti literal 'servare' adalah 'keep' atau 'save'.",
+                    "D: Salah. Wise (bijaksana) adalah cara memanfaatkan, bukan arti dari 'servare'."
+                ]
             },
             {
                 question: "High Conservation Value atau Nilai Konservasi Tinggi terdiri dari ...",
                 options: ["A. 3", "B. 4", "C. 5", "D. 6"],
                 correctAnswer: 3,
-                explanation: "Pada halaman 29, terdapat enam kategori Nilai Konservasi Tinggi (NKT 1 hingga NKT 6). Hal ini juga diperkuat pada halaman 31 tentang 'Nilai Konservasi Tinggi (NKT) Toolkit 2013'."
+                explanation: "Pada halaman 29, terdapat enam kategori Nilai Konservasi Tinggi (NKT 1 hingga NKT 6). Hal ini juga diperkuat pada halaman 31 tentang 'Nilai Konservasi Tinggi (NKT) Toolkit 2013'.",
+                optionExplanations: [
+                    "A: Salah. Jumlah NKT bukan 3.",
+                    "B: Salah. Jumlah NKT bukan 4.",
+                    "C: Salah. Jumlah NKT bukan 5.",
+                    "D: Benar. Halaman 29 menunjukkan enam kategori NKT (NKT 1 hingga NKT 6)."
+                ]
             },
             {
                 question: "Setelah identifikasi NKT, maka diperoleh data aspek ekologi (flora/vegetasi), antara lain, kecuali ...",
                 options: ["A. habitat", "B. struktur", "C. komposisi", "D. dominansi jenis dilindungi"],
                 correctAnswer: 3,
-                explanation: "Data aspek ekologi umumnya mencakup habitat, struktur vegetasi, dan komposisi jenis. 'Dominansi jenis dilindungi' lebih merupakan hasil analisis dari data keanekaragaman hayati (NKT 1)."
+                explanation: "Data aspek ekologi umumnya mencakup habitat, struktur vegetasi, dan komposisi jenis. 'Dominansi jenis dilindungi' lebih merupakan hasil analisis dari data keanekaragaman hayati (NKT 1).",
+                optionExplanations: [
+                    "A: Salah. Habitat adalah data aspek ekologi dasar.",
+                    "B: Salah. Struktur vegetasi adalah data aspek ekologi dasar.",
+                    "C: Salah. Komposisi jenis adalah data aspek ekologi dasar.",
+                    "D: Benar. 'Dominansi jenis dilindungi' lebih merupakan hasil analisis dari data keanekaragaman hayati (NKT 1), bukan parameter ekologi dasar yang dikumpulkan dalam identifikasi NKT."
+                ]
             },
             {
                 question: "Dalam metode identifikasi NKT, observasi aspek flora dan fauna (ekologi) dilakukan dengan, kecuali ...",
                 options: ["A. rapid assessment", "B. pengamatan kualitatif lapangan", "C. analisis & pemetaan", "D. wawancara & diskusi dengan masyarakat lokal"],
                 correctAnswer: 3,
-                explanation: "Wawancara dan diskusi dengan masyarakat lokal lebih tepat digunakan untuk mengidentifikasi aspek sosial budaya (NKT 5 dan NKT 6), bukan untuk observasi langsung aspek flora dan fauna (ekologi)."
+                explanation: "Wawancara dan diskusi dengan masyarakat lokal lebih tepat digunakan untuk mengidentifikasi aspek sosial budaya (NKT 5 dan NKT 6), bukan untuk observasi langsung aspek flora dan fauna (ekologi).",
+                optionExplanations: [
+                    "A: Salah. Rapid assessment adalah metode untuk observasi ekologi.",
+                    "B: Salah. Pengamatan lapangan adalah metode untuk observasi ekologi.",
+                    "C: Salah. Analisis dan pemetaan adalah metode untuk observasi ekologi.",
+                    "D: Benar. Wawancara dan diskusi dengan masyarakat lokal lebih tepat digunakan untuk mengidentifikasi aspek sosial budaya (NKT 5 dan NKT 6), bukan untuk observasi langsung aspek flora dan fauna."
+                ]
             },
             {
                 question: "Pengambilan data lapangan dan ground check, termasuk dalam proses penilaian NKT ...",
                 options: ["A. Persiapan Studi", "B. Pengumpulan Data", "C. Analisis & pemetaan", "D. penyusunan laporan dan rekomendasi"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 105, tahapan penilaian NKT mencakup: Persiapan Studi (pengumpulan data sekunder), Pengumpulan Data (pengambilan data lapangan dan ground check), Analisa dan Pemetaan, dst."
+                explanation: "Pada halaman 105, tahapan penilaian NKT mencakup: Persiapan Studi (pengumpulan data sekunder), Pengumpulan Data (pengambilan data lapangan dan ground check), Analisa dan Pemetaan, dst.",
+                optionExplanations: [
+                    "A: Salah. Persiapan Studi mencakup pengumpulan data sekunder dan analisis awal.",
+                    "B: Benar. Halaman 105 menyebut tahap Pengumpulan Data mencakup 'pengambilan data lapangan dan ground check.'",
+                    "C: Salah. Tahap ini adalah analisis data primer dan identifikasi HCV.",
+                    "D: Salah. Tahap ini adalah penyusunan laporan akhir."
+                ]
             },
             {
                 question: "Harimau sumatera, Jalak Bali, Badak Jawa, elang Jawa merupakan contoh spesies yang termasuk kategori spesies by IUCN (The World Conservation Union) ...",
                 options: ["A. Extinct (Punah)", "B. Critically Endangered (CR, Kritis)", "C. Vulnerable (VU, Rentan)", "D. Endangered (EN, Genting atau Terancam)"],
                 correctAnswer: 1,
-                explanation: "Pada halaman 40, keempat spesies tersebut ditampilkan sebagai contoh spesies dengan status Critically Endangered (CR; Kritis). Status ini diberikan kepada spesies yang menghadapi risiko kepunahan di waktu dekat."
+                explanation: "Pada halaman 40, keempat spesies tersebut ditampilkan sebagai contoh spesies dengan status Critically Endangered (CR; Kritis). Status ini diberikan kepada spesies yang menghadapi risiko kepunahan di waktu dekat.",
+                optionExplanations: [
+                    "A: Salah. Spesies punah contohnya Harimau Jawa dan Harimau Bali.",
+                    "B: Benar. Halaman 40 menampilkan Harimau Sumatra, Jalak Bali, Badak Jawa, dan Elang Jawa sebagai contoh spesies dengan status Critically Endangered (CR; Kritis).",
+                    "C: Salah. Contoh VU adalah Kasuari dan Kakak Tua Maluku.",
+                    "D: Salah. Contoh EN adalah Banteng, Trenggiling, Anoa, Tapir, dan Bekantan."
+                ]
             },
             {
                 question: "Kawasan yang Mempunyai Tingkat Keanekaragaman Hayati yang Penting, termasuk dalam NKT ...",
                 options: ["A. 1", "B. 2", "C. 3", "D. 4"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 29 dan 36, NKT 1 didefinisikan sebagai 'Kawasan yang Mempunyai Tingkat Keanekaragaman Hayati yang Penting.' NKT 1 mencakup konsentrasi keanekaragaman hayati."
+                explanation: "Pada halaman 29 dan 36, NKT 1 didefinisikan sebagai 'Kawasan yang Mempunyai Tingkat Keanekaragaman Hayati yang Penting.' NKT 1 mencakup konsentrasi keanekaragaman hayati.",
+                optionExplanations: [
+                    "A: Benar. Halaman 29 dan 36 mendefinisikan NKT 1 sebagai 'Kawasan yang Mempunyai Tingkat Keanekaragaman Hayati yang Penting.'",
+                    "B: Salah. NKT 2 tentang bentang alam.",
+                    "C: Salah. NKT 3 tentang ekosistem langka.",
+                    "D: Salah. NKT 4 tentang jasa lingkungan."
+                ]
             },
             {
                 question: "Di perkebunan sawit, berikut yang bukan termasuk kriteria NKT 1, kawasan yang Mempunyai Tingkat Keanekaragaman Hayati yang Penting ...",
                 options: ["A. Kawasan lindung atau kawasan di dalamnya", "B. Kawasan memberikan fungsi perlindungan keanekaragaman hayati kepada kawasan lindung atau konservasi", "C. Spesies yang masuk dalam kategori dilindungi dan terancam punah", "D. Kegiatan sekunder yang berdampak pada fungsi konservasi keanekaragaman hayati"],
                 correctAnswer: 3,
-                explanation: "Pilihan A, B, dan C merupakan kriteria NKT 1 (NKT 1.1, 1.2, 1.3). Pilihan D merujuk pada aktivitas manusia dan dampaknya, bukan atribut kawasan yang memiliki nilai konservasi tinggi."
+                explanation: "Pilihan A, B, dan C merupakan kriteria NKT 1 (NKT 1.1, 1.2, 1.3). Pilihan D merujuk pada aktivitas manusia dan dampaknya, bukan atribut kawasan yang memiliki nilai konservasi tinggi.",
+                optionExplanations: [
+                    "A: Salah. Ini adalah kriteria NKT 1.1.",
+                    "B: Salah. Ini adalah kriteria NKT 1.1.",
+                    "C: Salah. Ini adalah kriteria NKT 1.2.",
+                    "D: Benar. Ini merujuk pada aktivitas manusia dan dampaknya, bukan atribut kawasan yang memiliki nilai konservasi tinggi."
+                ]
             },
             {
                 question: "Dalam sejarah NKT, tahun berapa mulai diterapkan NKT / HCV di perkebunan sawit?",
                 options: ["A. 1999", "B. 2000", "C. 2003", "D. 2004"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 19, disebutkan bahwa 'Tahun 2003 → penerapan pada konsesi perkebunan sawit → HCV Toolkit.' Jadi, penerapan HCV di perkebunan sawit dimulai pada tahun 2003."
+                explanation: "Pada halaman 19, disebutkan bahwa 'Tahun 2003 → penerapan pada konsesi perkebunan sawit → HCV Toolkit.' Jadi, penerapan HCV di perkebunan sawit dimulai pada tahun 2003.",
+                optionExplanations: [
+                    "A: Salah. Tahun 1999 adalah saat HCV pertama kali muncul dalam Prinsip dan Kriteria FSC.",
+                    "B: Salah. Tidak ada penyebutan tahun 2000 dalam sejarah HCV.",
+                    "C: Benar. Halaman 19 menyebut 'Tahun 2003 → penerapan pada konsesi perkebunan sawit → HCV Toolkit.'",
+                    "D: Salah. Tahun 2004 adalah saat HCV menjadi syarat sertifikasi RSPO."
+                ]
             },
             {
                 question: "Berikut yang bukan termasuk benefit sawit secara ekonomi ...",
                 options: ["A. penyumbang devisa negara", "B. menjadi bahan kebutuhan sehari hari manusia", "C. menyerap tenaga kerja (padat kerja)", "D. meningkatkan kesejahteraan petani / pekebun"],
                 correctAnswer: 1,
-                explanation: "Pilihan A, C, dan D merupakan manfaat ekonomi sawit. Pilihan B lebih merupakan manfaat penggunaan/ konsumsi, bukan manfaat ekonomi secara langsung (devisa, tenaga kerja, kesejahteraan)."
+                explanation: "Pilihan A, C, dan D merupakan manfaat ekonomi sawit. Pilihan B lebih merupakan manfaat penggunaan/ konsumsi, bukan manfaat ekonomi secara langsung (devisa, tenaga kerja, kesejahteraan).",
+                optionExplanations: [
+                    "A: Salah. Ini adalah manfaat ekonomi sawit.",
+                    "B: Benar. Ini adalah manfaat penggunaan/konsumsi, bukan manfaat ekonomi secara langsung (devisa, tenaga kerja, kesejahteraan).",
+                    "C: Salah. Ini adalah manfaat ekonomi sawit.",
+                    "D: Salah. Ini adalah manfaat ekonomi sawit."
+                ]
             },
             {
                 question: "Contoh kawasan NKT 4 atau ekosistem penting sebagai Penyedia Air dan pengendalian banjir bagi masyarakat hilir, kecuali ...",
                 options: ["A. lahan gambut berhutan", "B. hutan rawa", "C. hutan resapan", "D. hutan bakau"],
                 correctAnswer: 3,
-                explanation: "Pada halaman 70, contoh kawasan NKT 4.1 yang disebutkan antara lain ekosistem riparian, lahan gambut berhutan, danau, dsb. Konteks ini mencari yang dikecualikan."
+                explanation: "Pada halaman 70, contoh kawasan NKT 4.1 yang disebutkan antara lain ekosistem riparian, lahan gambut berhutan, danau, dsb. Konteks ini mencari yang dikecualikan.",
+                optionExplanations: [
+                    "A: Salah. Lahan gambut berhutan termasuk contoh NKT 4.1.",
+                    "B: Salah. Hutan rawa termasuk contoh NKT 4.1.",
+                    "C: Salah. Hutan resapan termasuk contoh NKT 4.1.",
+                    "D: Benar. Meskipun hutan bakau disebutkan sebagai contoh NKT 4.1 di halaman 70, dalam konteks pertanyaan ini mungkin ada ekosistem lain yang lebih krusial yang diharapkan sebagai pengecualian dalam materi uji."
+                ]
             },
             {
                 question: "Dalam kriteria NKT 5.2, yang termasuk spesies harus diidentifikasi dan dikonservasinya dibutuhkan dalam rencana dan sistem operasi manajemen perkebunan adalah, kecuali ...",
                 options: ["A. langka", "B. endemik", "C. terancam", "D. terancam punah"],
                 correctAnswer: 1,
-                explanation: "NKT 5 lebih berfokus pada kebutuhan dasar masyarakat lokal, bukan perlindungan spesies tertentu. Spesies endemik lebih relevan dengan NKT 1 (keanekaragaman hayati), bukan NKT 5."
+                explanation: "NKT 5 lebih berfokus pada kebutuhan dasar masyarakat lokal, bukan perlindungan spesies tertentu. Spesies endemik lebih relevan dengan NKT 1 (keanekaragaman hayati), bukan NKT 5.",
+                optionExplanations: [
+                    "A: Salah. Spesies langka termasuk dalam kriteria.",
+                    "B: Benar. NKT 5 lebih berfokus pada kebutuhan dasar masyarakat lokal, bukan perlindungan spesies tertentu. Spesies endemik lebih relevan dengan NKT 1.",
+                    "C: Salah. Spesies terancam termasuk dalam kriteria.",
+                    "D: Salah. Spesies terancam punah termasuk dalam kriteria."
+                ]
             },
             {
                 question: "Pengumpulan data sekunder (peta, laporan penelitian dll), analisa data, dan penentuan metode pengambilan data, termasuk dalam proses penilaian NKT ...",
                 options: ["A. Persiapan Studi", "B. Pengumpulan Data", "C. Analisis & pemetaan", "D. penyusunan laporan dan rekomendasi"],
                 correctAnswer: 0,
-                explanation: "Pada halaman 105, tahap Persiapan Studi mencakup 'Pengumpulan data sekunder (peta, laporan penelitian dll), analisa data, dan penentuan metode pengambilan data.'"
+                explanation: "Pada halaman 105, tahap Persiapan Studi mencakup 'Pengumpulan data sekunder (peta, laporan penelitian dll), analisa data, dan penentuan metode pengambilan data.'",
+                optionExplanations: [
+                    "A: Benar. Halaman 105 menyebut tahap Persiapan Studi mencakup 'Pengumpulan data sekunder (peta, laporan penelitian dll), analisa data, dan penentuan metode pengambilan data.'",
+                    "B: Salah. Pengumpulan Data adalah tahap pengambilan data lapangan dan ground check.",
+                    "C: Salah. Tahap ini adalah analisis data primer dan identifikasi HCV.",
+                    "D: Salah. Tahap ini adalah penyusunan laporan akhir."
+                ]
             },
             {
                 question: "Kawasan yang Mempunyai Fungsi Penting untuk Pemenuhan Kebutuhan Dasar Masyarakat Lokal, termasuk dalam NKT ...",
                 options: ["A. 3", "B. 4", "C. 5", "D. 6"],
                 correctAnswer: 2,
-                explanation: "Pada halaman 29, NKT 5 didefinisikan sebagai 'Kawasan yang Mempunyai Fungsi Penting untuk Pemenuhan Kebutuhan Dasar Masyarakat Lokal.'"
+                explanation: "Pada halaman 29, NKT 5 didefinisikan sebagai 'Kawasan yang Mempunyai Fungsi Penting untuk Pemenuhan Kebutuhan Dasar Masyarakat Lokal.'",
+                optionExplanations: [
+                    "A: Salah. NKT 3 tentang ekosistem langka.",
+                    "B: Salah. NKT 4 tentang jasa lingkungan.",
+                    "C: Benar. Halaman 29 mendefinisikan NKT 5 sebagai 'Kawasan yang Mempunyai Fungsi Penting untuk Pemenuhan Kebutuhan Dasar Masyarakat Lokal.'",
+                    "D: Salah. NKT 6 tentang identitas budaya."
+                ]
             },
 
             // --- BAGIAN ESAI (10 Soal) ---
@@ -767,19 +1223,20 @@
         const scoreDisplay = document.getElementById('score-display');
         const progressBar = document.getElementById('progress-bar');
 
-
-        // 2. Mengirim data ke DB secara otomatis jika tab ditutup atau direfresh di tengah jalan
+        // 1. Mengirim data ke DB secara otomatis jika tab ditutup
         window.addEventListener('beforeunload', () => {
             if (userName && currentQuestionIndex > 0 && currentQuestionIndex < questionsData.length) {
                 const maxScore = questionsData.length * 10;
                 const jawabanRingkas = userAnswers.map(ans => `Q${ans.soal_ke} (${ans.tipe}): ${ans.jawaban_user}`).join('\n');
 
+                const progressData = JSON.stringify({ userName, currentQuestionIndex, score, userAnswers });
+
                 const formData = new URLSearchParams();
                 formData.append('nama', userName + " (Belum Selesai)");
                 formData.append('skor', score + " / " + maxScore);
                 formData.append('jawaban', jawabanRingkas + `\n[Terhenti di soal ${currentQuestionIndex + 1}]`);
+                formData.append('rawData', progressData); // Kirim histori murni ke DB
 
-                // Menggunakan fetch dengan keepalive agar request berlanjut di latar belakang
                 fetch(GOOGLE_SHEET_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -790,16 +1247,7 @@
             }
         });
 
-        // 3. Fungsi untuk mengamankan data ke penyimpanan lokal per soal
-        function saveLocalProgress() {
-            if (userName) {
-                localStorage.setItem('quizProgress', JSON.stringify({
-                    userName, currentQuestionIndex, score, userAnswers
-                }));
-            }
-        }
-
-        function startGame() {
+        async function startGame() {
             const nameInput = document.getElementById('user-name').value;
             if (nameInput.trim() === "") {
                 alert("Silakan masukkan nama Anda terlebih dahulu.");
@@ -807,34 +1255,44 @@
             }
             const inputName = nameInput.trim();
 
-            // Cek progress di database lokal browser
-            const savedProgress = localStorage.getItem('quizProgress');
-            if (savedProgress) {
-                const data = JSON.parse(savedProgress);
-                // Jika nama cocok dan ada progress tersimpan
-                if (data.userName === inputName && data.currentQuestionIndex > 0) {
+            // Ubah tombol jadi status loading
+            const startBtn = document.querySelector('#start-screen button');
+            const originalText = startBtn.innerHTML;
+            startBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mencari Database...';
+            startBtn.disabled = true;
 
-                    // Tampilkan Popup Kustom
-                    resumeMessage.innerHTML = `Halo <strong>${inputName}</strong>, kami menemukan data kuis kamu yang belum selesai (berhenti di soal ${data.currentQuestionIndex + 1}).`;
-                    resumePopup.classList.remove('hidden');
+            try {
+                // Cek database Google Sheet
+                const response = await fetch(GOOGLE_SHEET_SCRIPT_URL + '?action=check&nama=' + encodeURIComponent(inputName));
+                const result = await response.json();
 
-                    // Aksi tombol Lanjutkan
-                    btnResume.onclick = function () {
-                        resumePopup.classList.add('hidden');
-                        resumeGame(data);
-                    };
+                if (result.found && result.rawData && result.rawData.length > 5) {
+                    const data = JSON.parse(result.rawData);
+                    if (data.currentQuestionIndex > 0 && data.currentQuestionIndex < questionsData.length) {
+                        resumeMessage.innerHTML = `Halo <strong>${inputName}</strong>, kami menemukan data kuis kamu di database yang belum selesai (berhenti di soal ${data.currentQuestionIndex + 1}).`;
+                        resumePopup.classList.remove('hidden');
 
-                    // Aksi tombol Ulangi
-                    btnRestart.onclick = function () {
-                        resumePopup.classList.add('hidden');
-                        startFreshGame(inputName);
-                    };
+                        btnResume.onclick = function () {
+                            resumePopup.classList.add('hidden');
+                            resumeGame(data);
+                        };
 
-                    return; // Hentikan eksekusi ke bawah, tunggu klik dari user
+                        btnRestart.onclick = function () {
+                            resumePopup.classList.add('hidden');
+                            startFreshGame(inputName);
+                        };
+
+                        startBtn.innerHTML = originalText;
+                        startBtn.disabled = false;
+                        return; // Tunggu pilihan user
+                    }
                 }
+            } catch (e) {
+                console.error("Gagal koneksi ke database, memulai sesi baru.", e);
             }
 
-            // Jika tidak ada data tersimpan
+            startBtn.innerHTML = originalText;
+            startBtn.disabled = false;
             startFreshGame(inputName);
         }
 
@@ -858,7 +1316,6 @@
             score = 0;
             userAnswers = [];
             updateScoreDisplay();
-            saveLocalProgress();
             loadQuestion();
         }
 
@@ -867,35 +1324,39 @@
             nextBtn.classList.add('hidden');
             explanationBox.classList.add('hidden');
 
-            // Atur visibilitas tombol Kembali (Hilang di soal pertama)
             if (currentQuestionIndex > 0) {
                 prevBtn.classList.remove('hidden');
             } else {
                 prevBtn.classList.add('hidden');
             }
 
-            const currentQ = questionsData[currentQuestionIndex];
+            // PELINDUNG BUG (Try-Catch)
+            let currentQ;
+            try {
+                currentQ = questionsData[currentQuestionIndex];
+                if (!currentQ) throw new Error("Soal tidak ditemukan");
+            } catch (error) {
+                alert(`Terjadi kesalahan sistem pada soal ke-${currentQuestionIndex + 1}. Periksa kembali penulisan format koma/kurung di dalam kode questionsData.`);
+                console.error(error);
+                return;
+            }
+
             const isEssay = currentQ.type === 'essay';
 
-            // Update UI
             questionCounter.innerText = `Pertanyaan ${currentQuestionIndex + 1} / ${questionsData.length}`;
             const progressPercentage = ((currentQuestionIndex) / questionsData.length) * 100;
             progressBar.style.width = `${progressPercentage}%`;
-
             questionText.innerHTML = `${currentQuestionIndex + 1}. ${currentQ.question}`;
 
-            // Cek apakah soal ini sudah dijawab sebelumnya berdasarkan histori userAnswers
             const existingAnswer = userAnswers.find(ans => ans.soal_ke === currentQuestionIndex + 1);
 
             if (isEssay) {
-                // Tampilan Esai
                 questionTypeBadge.innerText = "ESAI";
                 questionTypeBadge.className = "text-xs font-bold px-2 py-1 bg-yellow-100 text-yellow-700 rounded uppercase";
                 optionsContainer.classList.add('hidden');
                 essayContainer.classList.remove('hidden');
 
                 if (existingAnswer) {
-                    // Mode Priview Esai
                     isAnswered = true;
                     essayInput.value = existingAnswer.jawaban_user;
                     essayInput.disabled = true;
@@ -903,66 +1364,79 @@
                     showExplanation(true, currentQ.explanation, true);
                     nextBtn.classList.remove('hidden');
                 } else {
-                    // Mode Input Baru
                     essayInput.value = '';
                     essayInput.disabled = false;
                     submitEssayBtn.classList.remove('hidden');
                     submitEssayBtn.disabled = false;
                 }
             } else {
-                // Tampilan Pilihan Ganda
                 questionTypeBadge.innerText = "PILIHAN GANDA";
                 questionTypeBadge.className = "text-xs font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded uppercase";
                 optionsContainer.classList.remove('hidden');
                 essayContainer.classList.add('hidden');
 
                 optionsContainer.innerHTML = '';
+
+                // Pelindung bug tambahan jika options kosong
+                if (!currentQ.options) {
+                    alert(`Opsi pilihan ganda untuk soal ke-${currentQuestionIndex + 1} tidak valid.`);
+                    return;
+                }
+
                 currentQ.options.forEach((option, index) => {
                     const btn = document.createElement('button');
-                    btn.className = 'option-btn w-full text-left bg-white border-2 border-gray-200 text-gray-700 font-medium py-3 px-5 rounded-xl focus:outline-none';
+                    btn.className = 'option-btn w-full text-left bg-white border-2 border-gray-200 text-gray-700 font-medium py-3 px-5 rounded-xl focus:outline-none transition duration-300';
 
-                    if (!existingAnswer) {
-                        btn.classList.add('hover:border-green-500', 'hover:bg-green-50');
-                        btn.onclick = () => selectOption(index, btn);
-                    } else {
-                        btn.classList.add('disabled-option'); // Matikan klik jika sedang mode priview
-                    }
-
-                    btn.innerHTML = option;
-                    optionsContainer.appendChild(btn);
-
-                    // Rekonstruksi visual jika soal ini adalah soal yang di-priview
+                    // Logika Visual Jawaban
                     if (existingAnswer) {
-                        isAnswered = true;
                         const userSelectedPrefix = existingAnswer.jawaban_user;
                         const optionPrefix = option.substring(0, 2);
                         const isCorrectOption = (index === currentQ.correctAnswer);
 
                         if (optionPrefix === userSelectedPrefix) {
                             if (isCorrectOption) {
-                                btn.classList.remove('border-gray-200', 'text-gray-700');
                                 btn.classList.add('correct');
                             } else {
-                                btn.classList.remove('border-gray-200', 'text-gray-700');
                                 btn.classList.add('incorrect');
                             }
                         } else if (isCorrectOption) {
-                            btn.classList.remove('border-gray-200');
                             btn.classList.add('correct');
                         }
+
+                        // Fitur Priview Penjelasan Per-Opsi (Requirement 1)
+                        btn.classList.add('cursor-pointer', 'hover:brightness-95');
+                        btn.onclick = () => {
+                            let textPenjelasan = currentQ.explanation;
+                            // Jika ada array penjelasan khusus per opsi
+                            if (currentQ.optionExplanations && currentQ.optionExplanations[index]) {
+                                textPenjelasan = currentQ.optionExplanations[index];
+                            }
+
+                            // Visual highlight saat diklik
+                            Array.from(optionsContainer.children).forEach(b => b.style.transform = 'scale(1)');
+                            btn.style.transform = 'scale(1.02)';
+
+                            showExplanation(isCorrectOption, textPenjelasan, false, optionPrefix);
+                        };
+                        isAnswered = true;
+
+                    } else {
+                        btn.classList.add('hover:border-green-500', 'hover:bg-green-50');
+                        btn.onclick = () => selectOption(index, btn);
                     }
+
+                    btn.innerHTML = option;
+                    optionsContainer.appendChild(btn);
                 });
 
                 if (existingAnswer) {
-                    const userSelectedPrefix = existingAnswer.jawaban_user;
                     const correctPrefix = currentQ.options[currentQ.correctAnswer].substring(0, 2);
-                    showExplanation(userSelectedPrefix === correctPrefix, currentQ.explanation, false);
+                    showExplanation(true, "Tekan salah satu opsi jawaban di atas untuk melihat penjelasannya secara spesifik.", false, correctPrefix);
                     nextBtn.classList.remove('hidden');
                 }
             }
         }
 
-        // Handler untuk Pilihan Ganda
         function selectOption(selectedIndex, buttonElement) {
             if (isAnswered) return;
             isAnswered = true;
@@ -970,39 +1444,24 @@
             const currentQ = questionsData[currentQuestionIndex];
             const buttons = optionsContainer.children;
 
-            // Catat jawaban untuk database
             userAnswers.push({
                 soal_ke: currentQuestionIndex + 1,
                 tipe: 'Pilihan Ganda',
-                jawaban_user: currentQ.options[selectedIndex].substring(0, 2) // Cuma simpan A., B., C., D.
-            });
-
-            Array.from(buttons).forEach(btn => {
-                btn.classList.add('disabled-option');
-                btn.onclick = null;
+                jawaban_user: currentQ.options[selectedIndex].substring(0, 2)
             });
 
             const isCorrect = (selectedIndex === currentQ.correctAnswer);
 
-            if (isCorrect) {
-                buttonElement.classList.remove('border-gray-200', 'text-gray-700');
-                buttonElement.classList.add('correct');
-                score += 10;
-                updateScoreDisplay();
-                showExplanation(true, currentQ.explanation, false);
-            } else {
-                buttonElement.classList.remove('border-gray-200', 'text-gray-700');
-                buttonElement.classList.add('incorrect');
-                // Tampilkan yang benar
-                buttons[currentQ.correctAnswer].classList.remove('border-gray-200', 'disabled-option');
-                buttons[currentQ.correctAnswer].classList.add('correct');
-                showExplanation(false, currentQ.explanation, false);
-            }
+            if (isCorrect) score += 10;
+            updateScoreDisplay();
 
-            nextBtn.classList.remove('hidden');
+            // Simpan ke DB lokal otomatis tiap soal (opsional, sebagai backup)
+            // Namun kita andalkan beforeunload untuk cloud
+
+            // Render ulang pertanyaan untuk masuk ke mode priview (agar penjelasan bisa diklik)
+            loadQuestion();
         }
 
-        // Handler untuk Esai
         function submitEssay() {
             const answerText = essayInput.value.trim();
             if (answerText === "") {
@@ -1011,45 +1470,40 @@
             }
 
             isAnswered = true;
-
-            // Catat jawaban untuk database
             userAnswers.push({
                 soal_ke: currentQuestionIndex + 1,
                 tipe: 'Esai',
                 jawaban_user: answerText
             });
 
-            // Asumsi Esai dinilai penuh jika dijawab (untuk memotivasi)
             score += 10;
             updateScoreDisplay();
-
-            essayInput.disabled = true;
-            submitEssayBtn.classList.add('hidden');
-
-            const currentQ = questionsData[currentQuestionIndex];
-            showExplanation(true, currentQ.explanation, true);
-
-            nextBtn.classList.remove('hidden');
+            loadQuestion(); // Render ulang ke mode priview
         }
 
-        function showExplanation(isCorrect, text, isEssay) {
-            explanationBox.classList.remove('hidden', 'bg-green-100', 'border-green-500', 'text-green-800', 'bg-red-100', 'border-red-500', 'text-red-800', 'bg-yellow-100', 'border-yellow-500', 'text-yellow-800');
+        function showExplanation(isCorrect, text, isEssay, prefix = "") {
+            explanationBox.classList.remove('hidden', 'bg-green-100', 'border-green-500', 'text-green-800', 'bg-red-100', 'border-red-500', 'text-red-800', 'bg-yellow-100', 'border-yellow-500', 'text-yellow-800', 'bg-blue-100', 'border-blue-500', 'text-blue-800');
 
             if (isEssay) {
                 explanationBox.classList.add('bg-yellow-100', 'border-yellow-500', 'text-yellow-800');
                 explanationIcon.innerHTML = '<i class="fas fa-info-circle"></i>';
                 explanationTitle.innerText = "Referensi Jawaban:";
+            } else if (prefix && text.includes("Tekan salah satu opsi")) {
+                // Status awal priview
+                explanationBox.classList.add('bg-blue-100', 'border-blue-500', 'text-blue-800');
+                explanationIcon.innerHTML = '<i class="fas fa-hand-pointer"></i>';
+                explanationTitle.innerText = "Mode Priview Aktif";
             } else if (isCorrect) {
                 explanationBox.classList.add('bg-green-100', 'border-green-500', 'text-green-800');
                 explanationIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
-                explanationTitle.innerText = "Jawaban Benar!";
+                explanationTitle.innerText = `Penjelasan Opsi ${prefix}`;
             } else {
                 explanationBox.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
                 explanationIcon.innerHTML = '<i class="fas fa-times-circle"></i>';
-                explanationTitle.innerText = "Jawaban Kurang Tepat!";
+                explanationTitle.innerText = `Penjelasan Opsi ${prefix}`;
             }
 
-            explanationText.innerHTML = `<strong>Penjelasan:</strong><br/> ${text}`;
+            explanationText.innerHTML = `<strong>Informasi:</strong><br/> ${text}`;
         }
 
         function updateScoreDisplay() {
@@ -1058,8 +1512,6 @@
 
         function nextQuestion() {
             currentQuestionIndex++;
-            saveLocalProgress(); // Tambahkan baris ini
-
             if (currentQuestionIndex < questionsData.length) {
                 loadQuestion();
             } else {
@@ -1070,48 +1522,36 @@
         function prevQuestion() {
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
-                saveLocalProgress();
                 loadQuestion();
             }
         }
 
         function endGame() {
-            localStorage.removeItem('quizProgress'); // Tambahkan baris ini
             quizScreen.classList.add('hidden');
-            savingOverlay.classList.remove('hidden'); // Tampilkan loading overlay
+            savingOverlay.classList.remove('hidden');
 
             progressBar.style.width = `100%`;
             const maxScore = questionsData.length * 10;
-
-            // Siapkan format jawaban ringkas untuk dimasukkan ke 1 sel Google Sheet
             const jawabanRingkas = userAnswers.map(ans => `Q${ans.soal_ke} (${ans.tipe}): ${ans.jawaban_user}`).join('\n');
+            const progressData = JSON.stringify({ userName, currentQuestionIndex, score, userAnswers });
 
-            // Panggil API untuk save ke Google Sheets
-            saveDataToGoogleSheet(userName, score, maxScore, jawabanRingkas);
+            saveDataToGoogleSheet(userName, score, maxScore, jawabanRingkas, progressData);
         }
 
-        // FUNGSI UNTUK MENGIRIM DATA KE GOOGLE SHEETS VIA APPS SCRIPT
-        function saveDataToGoogleSheet(nama, skor, maxSkor, jawabanRingkas) {
-
-            // Format form data
+        function saveDataToGoogleSheet(nama, skor, maxSkor, jawabanRingkas, progressData) {
             const formData = new URLSearchParams();
-            formData.append('nama', nama);
+            formData.append('nama', nama); // Nama tanpa embel-embel "(Belum Selesai)"
             formData.append('skor', skor + " / " + maxSkor);
             formData.append('jawaban', jawabanRingkas);
+            formData.append('rawData', progressData); // Simpan status penuh
 
-            // Karena kita menggunakan mode no-cors untuk bypass isu preflight,
-            // fetch akan selalu sukses secara jaringan tapi tidak akan mengembalikan body
             fetch(GOOGLE_SHEET_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formData
             })
-                .then(() => {
-                    showEndScreen(skor, maxSkor, true);
-                })
+                .then(() => showEndScreen(skor, maxSkor, true))
                 .catch((error) => {
                     console.error('Error saving:', error);
                     showEndScreen(skor, maxSkor, false);
