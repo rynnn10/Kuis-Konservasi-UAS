@@ -1334,6 +1334,9 @@
             userAnswers = [];
             updateScoreDisplay();
             loadQuestion();
+
+            // TAMBAHAN: Langsung daftarkan user baru ke database saat mulai
+            syncToDatabase();
         }
 
         function loadQuestion() {
@@ -1487,10 +1490,9 @@
             if (isCorrect) score += 10;
             updateScoreDisplay();
 
-            // Simpan ke DB lokal otomatis tiap soal (opsional, sebagai backup)
-            // Namun kita andalkan beforeunload untuk cloud
+            // TAMBAHAN: Auto-save ke database setiap kali selesai menjawab soal
+            syncToDatabase();
 
-            // Render ulang pertanyaan untuk masuk ke mode priview (agar penjelasan bisa diklik)
             loadQuestion();
         }
 
@@ -1510,7 +1512,11 @@
 
             score += 10;
             updateScoreDisplay();
-            loadQuestion(); // Render ulang ke mode priview
+
+            // TAMBAHAN: Auto-save ke database
+            syncToDatabase();
+
+            loadQuestion();
         }
 
         function showExplanation(isCorrect, text, isEssay, prefix = "") {
@@ -1566,36 +1572,42 @@
             }
         }
 
-        function endGame() {
-            quizScreen.classList.add('hidden');
-            savingOverlay.classList.remove('hidden');
-
-            progressBar.style.width = `100%`;
+        // Fungsi sinkronisasi otomatis ke database secara real-time
+        function syncToDatabase(isFinished = false) {
+            if (!userName) return;
             const maxScore = questionsData.length * 10;
             const jawabanRingkas = userAnswers.map(ans => `Q${ans.soal_ke} (${ans.tipe}): ${ans.jawaban_user}`).join('\n');
             const progressData = JSON.stringify({ userName, currentQuestionIndex, score, userAnswers });
 
-            saveDataToGoogleSheet(userName, score, maxScore, jawabanRingkas, progressData);
-        }
-
-        function saveDataToGoogleSheet(nama, skor, maxSkor, jawabanRingkas, progressData) {
             const formData = new URLSearchParams();
-            formData.append('nama', nama); // Nama tanpa embel-embel "(Belum Selesai)"
-            formData.append('skor', skor + " / " + maxSkor);
-            formData.append('jawaban', jawabanRingkas);
-            formData.append('rawData', progressData); // Simpan status penuh
+            // Jika belum selesai, tambahkan embel-embel, jika sudah selesai gunakan nama asli
+            formData.append('nama', isFinished ? userName : userName + " (Belum Selesai)");
+            formData.append('skor', score + " / " + maxScore);
+            formData.append('jawaban', isFinished ? jawabanRingkas : jawabanRingkas + `\n[Terhenti di soal ${currentQuestionIndex + 1}]`);
+            formData.append('rawData', progressData);
 
             fetch(GOOGLE_SHEET_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formData
-            })
-                .then(() => showEndScreen(skor, maxSkor, true))
-                .catch((error) => {
-                    console.error('Error saving:', error);
-                    showEndScreen(skor, maxSkor, false);
-                });
+            }).catch(e => console.log("Auto-sync error", e));
+        }
+
+        function endGame() {
+            quizScreen.classList.add('hidden');
+            savingOverlay.classList.remove('hidden');
+
+            progressBar.style.width = `100%`;
+            const maxScore = questionsData.length * 10;
+
+            // Simpan status final ke database (isFinished = true akan menghapus tulisan "Belum Selesai")
+            syncToDatabase(true);
+
+            // Beri sedikit jeda 1 detik untuk efek loading, lalu ke layar akhir
+            setTimeout(() => {
+                showEndScreen(score, maxScore, true);
+            }, 1000);
         }
 
         function showEndScreen(skor, maxSkor, isSaveSuccess) {
